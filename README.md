@@ -121,3 +121,21 @@ This project is built using React.js and Vite.
 - This documentation file explaining the purpose of each part of the project.
 
 ---
+
+## My First React Code
+
+Once the project is set up, replace the content of `src/App.jsx` with the following code:
+
+```jsx
+function App() {
+  return (
+    <div>
+      <h1>Hello World</h1>
+      <h2>This is my first React App</h2>
+      <p>My name is namrata...</p>
+    </div>
+  );
+}
+
+export default App;
+```
