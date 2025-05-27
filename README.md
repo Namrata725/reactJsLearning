@@ -1,12 +1,49 @@
-# React + Vite
+# React Project Setup with Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview - React
 
-Currently, two official plugins are available:
+React is a JavaScript library for building user interfaces, especially single-page applications where you need a fast, interactive experience. It lets you build reusable UI components and manage state efficiently.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Why React
 
-## Expanding the ESLint configuration
+- Component-based architecture
+- Fast and efficient rendering with virtual DOM
+- Large community and ecosystem
+- Suitable for complex frontend applications
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Overview - Vite
+
+Vite is a modern frontend build tool that provides a faster and leaner development experience for modern web projects. It uses native ES modules and starts the server instantly.
+
+## Why Vite
+
+- Lightning-fast cold starts
+- Hot Module Replacement (HMR) for instant updates
+- Optimized build using Rollup
+- Easy configuration for React and other frameworks
+
+## Getting Started
+
+### Installation of Node.js and npm
+
+Install Node.js (which comes with npm) from the official site:
+
+`https://nodejs.org/`
+
+## Why install Node.js and npm?
+
+- **Node.js** is required to run JavaScript tools on your system.
+- **npm (Node Package Manager)** is used to manage project dependencies like React, Vite, etc.
+
+## Getting Started with React + Vite
+
+Open your terminal and run:
+
+```bash
+npm create vite@latest my-react-app -- --template react
+cd my-react-app
+npm install
+npm run dev
+```
+
+---
