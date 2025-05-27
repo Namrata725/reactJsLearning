@@ -240,3 +240,106 @@ JSX lets you write UI in a syntax similar to HTML, but with the full power of Ja
 - JSX is **compiled into `React.createElement()`** behind the scenes
 
 ---
+
+### 1. User Variable
+
+Embed variables inside JSX:
+
+```jsx
+function MyName() {
+  const name = "World";
+  return <h4>Hello {name}!</h4>;
+}
+```
+
+---
+
+### 2. User function
+
+```jsx
+function sub(a, b) {
+  // function
+  return (
+    <div>
+      <h4>
+        a - b= {a} - {b}= {a - b}
+      </h4>
+    </div>
+  );
+}
+```
+
+---
+
+### 3. User condition
+
+```jsx
+function ValidAge() {
+  const age = 25;
+  if (age >= 18) return <h4>You are an adult</h4>; //condition inside JSX curly braces
+  return <h4>You are a minor</h4>;
+}
+```
+
+---
+
+### 4.Operation
+
+```jsx
+function operation(a, b, op) {
+  if (op === "+") return a + b;
+  if (op === "-") return a - b;
+  if (op === "*") return a * b;
+  if (op === "/") return a / b;
+
+  function sub(a, b) {
+    // function
+    return (
+      <div>
+        <h4>
+          a - b= {a} - {b}= {a - b}
+        </h4>
+      </div>
+    );
+  }
+}
+
+// Usage:
+<h4>Result = {operation(12, 3, "/")}</h4>;
+```
+
+---
+
+### 5. Object and Array
+
+```jsx
+function MyObject() {
+  const person = {
+    name: "Namrata",
+    age: 25,
+    city: "Kathmandu",
+  };
+  return (
+    <h4>
+      {person.name} is {person.age} years old and lives in {person.city}
+    </h4>
+  ); //calling object inside JSX curly braces
+}
+
+function MyArray() {
+  const fruits = ["apple", "banana", "cherry"];
+  return <h4>{fruits[0]} is the first fruit</h4>; //calling array inside JSX curly braces
+}
+```
+
+---
+
+### 6.HTML Tags
+
+```jsx
+const path = "https://m.media-amazon.com/images/I/714d2f9gQGL.jpg";
+
+<img src={path} alt="Example" style={{ width: "200px", height: "200px" }} />;
+```
+
+#### create file and export it then import to Appp : file name: JSXCurlyBraces.jsx
