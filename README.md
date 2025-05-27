@@ -139,3 +139,86 @@ function App() {
 
 export default App;
 ```
+
+## What is a Component in React?
+
+A **component** in React is a **reusable piece of UI**. It works like a JavaScript function but returns JSX (HTML-like code).
+
+```jsx
+function Welcome() {
+  return <h1>Hello, Namrata!</h1>;
+}
+```
+
+---
+
+## How to Use a Component
+
+To use a component, call it like an HTML tag inside JSX:
+
+```jsx
+function App() {
+  return (
+    <div>
+      <Welcome />
+    </div>
+  );
+}
+
+function Welcome() {
+  return <h1>Hello, Namrata!</h1>;
+}
+```
+
+> Component names must start with an uppercase letter.
+
+---
+
+## Difference Between a Component and a Function
+
+| Aspect          | Function                          | Component                   |
+| --------------- | --------------------------------- | --------------------------- |
+| Purpose         | Performs logic and returns values | Returns JSX (UI)            |
+| Return Type     | Numbers, strings, etc.            | JSX (HTML-like structure)   |
+| Naming          | Can be lowercase                  | Must start with uppercase   |
+| React-specific? | No                                | Yes                         |
+| Used in JSX     | No                                | Yes, like `<MyComponent />` |
+
+### Example:
+
+#### file name:Header.jsx
+
+- since we are using component in new file so we have to import file in App.jsx :import Header from "./Header.JSX" and call inside App component :
+
+---
+
+```jsx
+
+function Header() {
+  return (
+    <div>
+      <h3>header</h3>
+      <h3>{greet()}</h3>
+    </div>
+  );
+}
+
+function greet() {
+  return "Hello from greet function!";
+}
+
+export default Header;
+
+App.jsx
+
+import Header from "./Header";
+function App() {
+  return (
+    <div>
+      <Header />
+    </div>
+  );
+}
+
+export default App;
+```
