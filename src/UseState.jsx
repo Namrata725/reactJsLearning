@@ -12,7 +12,7 @@ function UseState() {
 
   return (
     <div>
-      <h1>UseState Example</h1>
+      <h3>UseState Example</h3>
       <p>Current fruit: {fruit}</p>
       <button onClick={btnClick}>Change Fruit</button>
     </div>

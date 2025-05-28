@@ -445,3 +445,12 @@ function UseState() {
 
 export default UseState;
 ```
+
+## Toggle or Hide and show in React JS
+
+### steps
+
+- define state
+- update state on btn click
+- add condition for toggle
+- hide and show component
