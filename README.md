@@ -342,4 +342,69 @@ const path = "https://m.media-amazon.com/images/I/714d2f9gQGL.jpg";
 <img src={path} alt="Example" style={{ width: "200px", height: "200px" }} />;
 ```
 
-#### create file and export it then import to Appp : file name: JSXCurlyBraces.jsx
+#### create file and export it then import to Appp : file name: JSXCurlyBraces.
+
+---
+
+## BtnClick React Component
+
+This is a simple React component that demonstrates:
+
+- JavaScript vs. React functions
+- Handling button clicks
+- Using arrow functions
+- Passing parameters to functions in `onClick` events
+
+---
+
+## Topics Covered
+
+### 1. Difference Between JavaScript Function and React Function
+
+| JavaScript Function            | React Function (Component)        |
+| ------------------------------ | --------------------------------- |
+| Can exist anywhere in JS files | Specifically used for UI in React |
+| Returns any value              | Returns JSX                       |
+| Used for logic or utilities    | Used to define components         |
+| `function greet() {}`          | `function MyComponent() {}`       |
+
+---
+
+### 2. Steps
+
+#### Step 1: Make a Function
+
+```js
+function handleClick1() {
+  alert("Button clicked!");
+}
+```
+
+#### Step 2: Make a Button
+
+<button onClick={handleClick1}>Click Me</button>
+
+#### Step 3: Call an Arrow Function
+
+```js
+const handleClick2 = () => {
+  alert("Arrow function clicked!");
+};
+```
+
+#### Step 4: Pass Parameters to a Function
+
+```js
+const fruit = (name) => {
+  alert(name);
+};
+
+<button onClick={() => fruit("apple")}>Apple</button>
+<button onClick={() => fruit("banana")}>Banana</button>
+```
+
+---
+
+### file name: ClickHandler.jsx.
+
+---
