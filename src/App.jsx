@@ -1,6 +1,7 @@
 import Header from "./Header";
 import JSXCurlyBraces from "./JSXCurlyBraces";
 import ClickHandlers from "./ClickHandlers";
+import UseState from "./UseState";
 function App() {
   return (
     <div>
@@ -9,6 +10,8 @@ function App() {
       <JSXCurlyBraces />
       <hr />
       <ClickHandlers />
+      <hr />
+      <UseState />
     </div>
   );
 }
