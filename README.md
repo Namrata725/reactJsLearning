@@ -408,3 +408,40 @@ const fruit = (name) => {
 ### file name: ClickHandler.jsx.
 
 ---
+
+# Understanding state in React
+
+## what is state in React JS ?
+
+State is a container to store data like variable. State is mutable and dynamic . we have to import it when we want to use it. It re-render component automatically so that data can visible on UI.
+
+## what is hooks in React JS?
+
+Hooks are the special feature for function component . hooks let you use different feature from your components. Eg: state , life cycle moment , side effect etc
+
+### example
+
+```jsx
+import { useState } from "react";
+
+function UseState() {
+  const [fruit, setValue] = useState("apple");
+  const btnClick = () => {
+    if (fruit === "apple") {
+      setValue("banana");
+    } else {
+      setValue("apple");
+    }
+  };
+
+  return (
+    <div>
+      <h1>UseState Example</h1>
+      <p>Current fruit: {fruit}</p>
+      <button onClick={btnClick}>Change Fruit</button>
+    </div>
+  );
+}
+
+export default UseState;
+```
