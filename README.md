@@ -454,3 +454,82 @@ export default UseState;
 - update state on btn click
 - add condition for toggle
 - hide and show component
+
+### What Are Props?
+
+In React, **props** (short for **properties**) are a way to pass **data from a parent component to a child component**. They make components dynamic and reusable by allowing them to receive different values.
+
+Props are **read-only**, meaning a component cannot modify the props it receives — it can only use or display them.
+
+---
+
+## Components in This Project
+
+### 1. `UserComponent`
+
+**Purpose**: Acts as the central component that organizes and manages the data being passed to other components.
+
+- It receives various types of props from its parent (`Props.jsx`), such as:
+  - Simple variables (`name`, `age`)
+  - Objects (`user`, `user2`)
+  - An array (`country`)
+  - State and state updater function (`student`, `setStudent`)
+- It then delegates and passes these props to the appropriate child components (`VariableProps`, `ObjectProps`, `ArrayProps`, and `ClickProps`) for display or interaction.
+- It also handles a **click event** to prompt the user for input, updates the state with `setStudent`, and conditionally renders the `ClickProps` component with the new value.
+
+---
+
+### 2. `VariableProps`
+
+**Purpose**: Simple data types like `name` and `age` are passed as individual props to show how primitive values can be rendered in child components (`VariableProps`).
+
+```jsx
+<VariableProps name={name} age={age} />
+```
+
+**Data type**: Variable (string, number)
+
+**Display**: Shows a welcome message using `name` and `age`.
+
+---
+
+### 3. `ObjectProps`
+
+**Purpose**: Complex data structures like user details (`user`, `user2`) are passed to demonstrate how you can access nested properties inside components (`ObjectProps`).
+
+```jsx
+<ObjectProps user={user} user2={user2} />
+```
+
+**Data type**: Object
+
+**Display**: Displays properties like `name`, `age`, and `email` from each object.
+
+---
+
+### 4. `ArrayProps`
+
+**Purpose**: A list of country names is passed as an array to show how to iterate over arrays using `.map()` and render each item (`ArrayProps`).
+
+```jsx
+<ArrayProps country={country} />
+```
+
+**Data type**: Array
+
+**Display**: Uses `.map()` to loop through the array and render a `<li>` for each country.
+
+---
+
+### 5. `ClickProps`
+
+**Purpose**: Demonstrates how to update and pass props through user interaction (click event).
+
+```jsx
+<ClickProps student={student} />
+```
+
+- A prompt appears when clicking the button.
+- The entered name is saved to state and passed as a prop to be displayed.
+
+---

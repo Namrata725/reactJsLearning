@@ -4,13 +4,13 @@ import ClickHandlers from "./ClickHandlers";
 import UseState from "./UseState";
 import Toggle from "./Toggle";
 import MutipleCondition from "./MutilpleCondition";
-
 import IfElseif from "./IfElseIf";
+import Props from "./Props";
 
 function App() {
   return (
     <div>
-      <Header />
+      {/* <Header />
       <hr />
       <JSXCurlyBraces />
       <hr />
@@ -22,8 +22,9 @@ function App() {
       <hr />
       <MutipleCondition />
       <hr />
-      <IfElseif />
+      <IfElseif /> */}
       <hr />
+      <Props />
     </div>
   );
 }
