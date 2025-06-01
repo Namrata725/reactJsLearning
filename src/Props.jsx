@@ -19,6 +19,9 @@ function Props() {
   const country = ["Nepal", "Australia", "USA", "sweden", "India"];
 
   const [student, setStudent] = useState();
+
+  const userName = "Orion";
+
   return (
     <div>
       <h4>Props</h4>
@@ -31,6 +34,7 @@ function Props() {
         country={country}
         student={student}
         setStudent={setStudent}
+        userName={userName}
       />
     </div>
   );

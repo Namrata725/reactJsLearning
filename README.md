@@ -533,3 +533,72 @@ Props are **read-only**, meaning a component cannot modify the props it receives
 - The entered name is saved to state and passed as a prop to be displayed.
 
 ---
+
+## More About Props in React
+
+This project demonstrates advanced usage of props in React by covering:
+
+- **Default Props**: Provide fallback values to props.
+- **Passing JSX using `children`**: Compose reusable layouts.
+- **Changing Styles Dynamically with Props**: Make components flexible and customizable.
+
+## Components Overview
+
+### Default Props
+
+In React, you can assign default values directly in the function parameter. This prevents `undefined` issues when props are not passed.
+
+```jsx
+function MoreProps({ name = "New User" }) {
+  return <p>Name: {name}</p>;
+}
+```
+
+Even if `name` isn't passed, `"New User"` will be shown.
+
+---
+
+### Passing JSX using `children`
+
+Props in React can contain JSX by using the `children` prop. This allows you to reuse layout components and inject different content inside.
+
+```jsx
+<Wrapper>
+  <p>Wrapper no: 1</p>
+</Wrapper>
+
+<Wrapper>
+  <p>Wrapper no: 2</p>
+  <h4>Register Please</h4>
+</Wrapper>
+```
+
+In the `Wrapper` component, `children` automatically represents the content between its opening and closing tags.
+
+```jsx
+function Wrapper({ children }) {
+  return <div>{children}</div>;
+}
+```
+
+---
+
+### Changing Styles Dynamically with Props
+
+You can make components highly customizable by using props for styling.
+
+```jsx
+function Wrapper({ children, color = "orange" }) {
+  return <div style={{ color: color }}>{children}</div>;
+}
+```
+
+When you pass the `color` prop, it overrides the default color:
+
+```jsx
+<Wrapper color="green">
+  <p>This text will be green</p>
+</Wrapper>
+```
+
+---

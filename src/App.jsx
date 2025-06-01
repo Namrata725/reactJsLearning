@@ -6,6 +6,7 @@ import Toggle from "./Toggle";
 import MutipleCondition from "./MutilpleCondition";
 import IfElseif from "./IfElseIf";
 import Props from "./Props";
+import MoreProps from "./MoreProps";
 
 function App() {
   return (
@@ -23,8 +24,11 @@ function App() {
       <MutipleCondition />
       <hr />
       <IfElseif /> */}
+      {/* <hr />
+      <Props /> */}
+
       <hr />
-      <Props />
+      <MoreProps />
     </div>
   );
 }
