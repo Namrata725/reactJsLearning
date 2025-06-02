@@ -602,3 +602,56 @@ When you pass the `color` prop, it overrides the default color:
 ```
 
 ---
+
+## GetInputField Component
+
+A simple **React functional component** that demonstrates how to handle user input using the `useState` hook. It allows users to enter text, display it below the input field, and clear the input with a button.
+
+### Code Example
+
+```jsx
+import { useState } from "react";
+
+function GetInputField() {
+  const [name, setName] = useState("");
+
+  const changeName = (event) => {
+    setName(event.target.value);
+  };
+
+  const handleClear = () => {
+    setName("");
+  };
+
+  return (
+    <div>
+      <h1>user</h1>
+      <input
+        type="text"
+        placeholder="Name"
+        onChange={changeName}
+        value={name}
+      />
+      <h4>{name}</h4>
+      <button onClick={handleClear}>Clear all</button>
+    </div>
+  );
+}
+
+export default GetInputField;
+```
+
+### explaination
+
+- **State Management:**
+- The component uses `useState` to hold the `name` value.
+- **Event Handling:**
+  - The `changeName` function updates the `name` state when the user types into the input field.
+  - The `handleClear` function resets the `name` state to an empty string when the "Clear all" button is clicked.
+- **Rendering:**
+
+  - The input field displays the current value of `name`.
+  - The entered name is also displayed below the input field in a `<h4>` tag.
+  - The "Clear all" button clears the input field and resets the name to an empty string.
+
+---

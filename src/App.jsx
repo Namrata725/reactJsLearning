@@ -7,6 +7,7 @@ import MutipleCondition from "./MutilpleCondition";
 import IfElseif from "./IfElseIf";
 import Props from "./Props";
 import MoreProps from "./MoreProps";
+import GetInputField from "./getInputField";
 
 function App() {
   return (
@@ -26,9 +27,11 @@ function App() {
       <IfElseif /> */}
       {/* <hr />
       <Props /> */}
-
+      {/* 
       <hr />
-      <MoreProps />
+      <MoreProps /> */}
+
+      <GetInputField />
     </div>
   );
 }
