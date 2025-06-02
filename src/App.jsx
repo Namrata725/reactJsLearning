@@ -8,6 +8,7 @@ import IfElseif from "./IfElseIf";
 import Props from "./Props";
 import MoreProps from "./MoreProps";
 import GetInputField from "./getInputField";
+import ControlComponent from "./ControlComponent";
 
 function App() {
   return (
@@ -30,8 +31,12 @@ function App() {
       {/* 
       <hr />
       <MoreProps /> */}
+      {/* 
 
       <GetInputField />
+      <hr /> */}
+
+      <ControlComponent />
     </div>
   );
 }

@@ -655,3 +655,27 @@ export default GetInputField;
   - The "Clear all" button clears the input field and resets the name to an empty string.
 
 ---
+
+## Controlled Component in React
+
+### What is a Controlled Component?
+
+A **controlled component** is a form element (like an input field) whose value is controlled by **React state**. In other words, the value of the input is set and updated by React, making the component predictable and manageable.
+
+### How to Identify a Controlled Component?
+
+A controlled component typically:
+
+- **Stores the input field value in state**.
+- **Uses an event handler (like `onChange`) to update state** when the user interacts with the input field.
+- **Sets the `value` attribute of the input to the state value**.
+
+### Benefits of Controlled Components
+
+**Single Source of Truth**: All form data lives in React state, making it easy to manage and debug.  
+**Validation and Manipulation Before Submit**: Data can be validated, formatted, or transformed in the component itself.  
+**Dynamic Updates**: Inputs can respond to state changes instantly (e.g., resetting, conditional rendering).
+
+### Example Code: Controlled Component in React
+
+file name: ControlledComponent.jsx
