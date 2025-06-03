@@ -686,7 +686,7 @@ file name: ControlledComponent.jsx
 
 In this example, we create multiple checkboxes representing various skills. We use a state variable to keep track of the selected skills.
 
-### Key Concepts
+### what it covers
 
 - **Create multiple checkboxes**
 - **Define a state variable to track checkbox values**
@@ -699,4 +699,37 @@ In this example, we create multiple checkboxes representing various skills. We u
 - Dynamic state updates based on user interaction
 - Helps with forms that require multiple selections
 
+---
+
 ### Example Code: Handle Checkbox in React file: HandleCheckbox.jsx
+
+## Handling Radio Buttons and Dropdown in React
+
+This example demonstrates how to handle radio buttons and dropdown lists using controlled components in React.
+
+### what it covers
+
+- Make a radio button
+- Get radio button value in state
+- Default selection of radio button
+- Make dropdown
+- Get dropdown value in state
+- Default selection in dropdown
+
+## Features
+
+### 1. Handle Radio Button (Gender Selection)
+
+- Uses `useState` to store the selected gender.
+- Updates gender based on the selected radio button.
+- Uses the `checked` attribute to bind selection to state.
+
+### 2. Handle Dropdown (City Selection)
+
+- Uses `useState` to store the selected city.
+- Dropdown value is updated using `onChange` handler.
+- Initially defaults to `"Kathmandu"`.
+
+## example code: Handle Radio Button and Dropdown in React file: HandleRadioButtonAndDropdown.jsx
+
+---

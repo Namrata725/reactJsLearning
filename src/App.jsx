@@ -10,6 +10,7 @@ import MoreProps from "./MoreProps";
 import GetInputField from "./getInputField";
 import ControlComponent from "./ControlComponent";
 import HandleCheckbox from "./HandleCheckbox";
+import HandleRadioButtonAndDropdown from "./HandleRadioButtonAndDropdown";
 
 function App() {
   return (
@@ -39,7 +40,8 @@ function App() {
 
       {/* <ControlComponent /> */}
 
-      <HandleCheckbox />
+      {/* <HandleCheckbox /> */}
+      <HandleRadioButtonAndDropdown />
       <hr />
     </div>
   );
