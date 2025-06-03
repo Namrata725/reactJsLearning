@@ -9,6 +9,7 @@ import Props from "./Props";
 import MoreProps from "./MoreProps";
 import GetInputField from "./getInputField";
 import ControlComponent from "./ControlComponent";
+import HandleCheckbox from "./HandleCheckbox";
 
 function App() {
   return (
@@ -36,7 +37,10 @@ function App() {
       <GetInputField />
       <hr /> */}
 
-      <ControlComponent />
+      {/* <ControlComponent /> */}
+
+      <HandleCheckbox />
+      <hr />
     </div>
   );
 }

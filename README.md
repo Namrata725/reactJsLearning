@@ -679,3 +679,24 @@ A controlled component typically:
 ### Example Code: Controlled Component in React
 
 file name: ControlledComponent.jsx
+
+---
+
+## Handle Checkbox in React
+
+In this example, we create multiple checkboxes representing various skills. We use a state variable to keep track of the selected skills.
+
+### Key Concepts
+
+- **Create multiple checkboxes**
+- **Define a state variable to track checkbox values**
+- **Add checkbox value to state when checked**
+- **Remove checkbox value from state when unchecked**
+
+### Benefits
+
+- Easy management of multiple selections
+- Dynamic state updates based on user interaction
+- Helps with forms that require multiple selections
+
+### Example Code: Handle Checkbox in React file: HandleCheckbox.jsx
