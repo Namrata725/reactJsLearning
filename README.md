@@ -733,3 +733,46 @@ This example demonstrates how to handle radio buttons and dropdown lists using c
 ## example code: Handle Radio Button and Dropdown in React file: HandleRadioButtonAndDropdown.jsx
 
 ---
+
+# Looping with `map()` Function in React
+
+This example demonstrates how to use JavaScript arrays and React's `map()` function to dynamically render content such as a table.
+
+---
+
+## What is Covered
+
+- What is an array?
+- How to define an array in React?
+- How to create a static HTML table
+- How to use the `map()` function for looping and rendering elements in JSX
+
+---
+
+## What is an Array?
+
+An array is a collection of items stored in a single variable. In JavaScript and React, arrays are commonly used to store lists of data.
+
+Example:
+
+```js
+const fruits = ["Apple", "Banana", "Cherry", "Date"];
+```
+
+### What is an Array of Objects?
+
+An array of objects is a list where each element is an object, and each object can hold multiple key-value pairs.
+
+```jsx
+const fruitsData = [
+  { id: 1, name: "Apple", color: "Red", price: 120 },
+  { id: 2, name: "Banana", color: "Yellow", price: 50 },
+  { id: 3, name: "Cherry", color: "Red", price: 200 },
+  { id: 4, name: "Graps", color: "Green", price: 150 },
+  { id: 5, name: "Orange", color: "Orange", price: 80 },
+];
+```
+
+### example code: Looping with `map()` Function in React file: LoopingWithMapFunction.jsx
+
+---

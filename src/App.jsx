@@ -12,6 +12,8 @@ import ControlComponent from "./ControlComponent";
 import HandleCheckbox from "./HandleCheckbox";
 import HandleRadioButtonAndDropdown from "./HandleRadioButtonAndDropdown";
 
+import LoopWithMapFunction from "./LoopWithMapFunction";
+
 function App() {
   return (
     <div>
@@ -41,7 +43,9 @@ function App() {
       {/* <ControlComponent /> */}
 
       {/* <HandleCheckbox /> */}
-      <HandleRadioButtonAndDropdown />
+      {/* <HandleRadioButtonAndDropdown /> */}
+
+      <LoopWithMapFunction />
       <hr />
     </div>
   );
