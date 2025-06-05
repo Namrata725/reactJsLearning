@@ -776,3 +776,51 @@ const fruitsData = [
 ### example code: Looping with `map()` Function in React file: LoopingWithMapFunction.jsx
 
 ---
+
+# Looping Through Components with Props in React
+
+This example demonstrates how to dynamically render multiple React components using an array of user data. It covers best practices like reusable components, looping with `.map()`, passing props, and adding inline styles.
+
+---
+
+## What is Covered?
+
+- Create a reusable component
+- Use `.map()` function to loop over data in JSX
+- Render a component multiple times using loop
+- Pass data as props from parent to child
+- Apply inline styling for each component
+
+---
+
+## Key Concepts
+
+### Component-Based Structure
+
+React is built around reusable components. Here, we use a `LoopComponentUser` component to display individual user information.
+
+### Array of Objects
+
+An array of objects is used to store user data, where each object contains:
+
+```js
+{
+  Id: 1,
+  UserName: "Ram",
+  Age: 23,
+  email: "ram@example.com"
+}
+
+```
+
+### The .map() Method
+
+The .map() function is used to loop through the array and render each user in its own LoopComponentUser component.
+
+### example code : LooopComponent.jsx
+
+---
+
+### Props
+
+Props allow data to be passed from parent **(LoopComponent)** to child **(LoopComponentUser.jsx)** components.
