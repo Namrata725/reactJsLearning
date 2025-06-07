@@ -821,6 +821,24 @@ The .map() function is used to loop through the array and render each user in it
 
 ---
 
-### Props
+### Nested Looping in React
 
-Props allow data to be passed from parent **(LoopComponent)** to child **(LoopComponentUser.jsx)** components.
+In this example, we have a nested loop using the `.map()` function. The outer loop iterates over an array of user data, and the inner loop loops through the user's friends array.
+
+## What is Covered?
+
+- Understand array of objects with nested arrays
+- Implement **outer loop** to display parent data (Schools)
+- Implement **inner loop** to display child data (Students)
+- Create reusable **component for outer loop** (School)
+- Create reusable **component for inner loop** (Student within School)
+- Use `.map()` for nested structures
+- Apply basic inline styling
+
+## This is a foundational pattern when working with real-world data such as:
+
+- Schools and Students
+- Departments and Employees
+- Categories and Products
+
+## Example Code : NestedLoopMap.jsx, SchoolData.jsx,
