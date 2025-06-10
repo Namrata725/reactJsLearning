@@ -990,3 +990,52 @@ Just like humans have predictable stages of life, React components follow these 
 ---
 
 ### code example at: LifeCycleDemoHandle.jsx, LifeCycleDemo.jsx
+
+---
+
+## Styling React UI Using CSS
+
+React provides **multiple ways** to apply styles to components. Each method has its use case depending on the size, structure, and complexity of your application.
+
+---
+
+## Types of Styling in React.js
+
+- inline
+- external
+- css modules
+- styled components
+- external css library/ framework
+
+---
+
+## Inline CSS
+
+- Defined directly in the component using the `style` attribute.
+- Uses camelCase for CSS properties.
+- Best for **small, dynamic styles**.
+
+## What It Covers
+
+- How React inline CSS is different from regular HTML style attributes.
+- Using JavaScript **object syntax** to define styles.
+- Creating a simple **User Profile Card layout** using inline CSS.
+- Writing inline CSS in a file named: `InlineCssDemo.jsx`.
+- Reusing inline styles and making **multiple profile cards**.
+
+---
+
+## How React Inline CSS is Different from Regular HTML Style?
+
+| Feature               | React Inline CSS              | Regular HTML Inline Style       |
+| --------------------- | ----------------------------- | ------------------------------- |
+| Syntax                | JavaScript Object             | String                          |
+| Property Naming       | camelCase (`backgroundColor`) | kebab-case (`background-color`) |
+| Dynamic Value Support | Yes                           | No                              |
+| Media Query Support   | No                            | No                              |
+
+---
+
+## Example: User Profile Cards with Inline CSS
+
+### File: `InlineCssDemo.jsx`

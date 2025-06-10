@@ -18,6 +18,7 @@ import NestedLoopMap from "./NestedLoopMap";
 import UseEffectDemo from "./useEffectDemo";
 import PropsEffectDemo from "./PropsEffectDemo";
 import LifeCycleDemo from "./LifeCycleDemo";
+import InlineCssDemo from "./InlineCssDemo";
 function App() {
   return (
     <div>
@@ -59,7 +60,8 @@ function App() {
 
       {/* <PropsEffectDemo /> */}
 
-      <LifeCycleDemo />
+      {/* <LifeCycleDemo /> */}
+      <InlineCssDemo />
     </div>
   );
 }
