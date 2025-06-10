@@ -24,7 +24,12 @@ function PropsEffectHandler({ data, count }) {
     sayHi();
   }, [data, count]); // runs on both
 
-  return <div></div>;
+  return (
+    <div>
+      <h4>{"data :: " + data}</h4>
+      <h4>{"count :: " + count}</h4>
+    </div>
+  );
 }
 
 export default PropsEffectHandler;

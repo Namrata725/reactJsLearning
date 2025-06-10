@@ -18,10 +18,8 @@ function PropsEffectDemo() {
     <div>
       <h4>PropsEffectDemo</h4>
 
-      <h4>{("Count :: ", count)}</h4>
       <button onClick={handleCount}>Count</button>
 
-      <h4>{("data :: ", data)}</h4>
       <button onClick={handleData}>Data </button>
 
       <PropsEffectHandler count={count} data={data} />
