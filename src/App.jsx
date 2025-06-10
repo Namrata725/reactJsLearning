@@ -15,6 +15,7 @@ import HandleRadioButtonAndDropdown from "./HandleRadioButtonAndDropdown";
 import LoopWithMapFunction from "./LoopWithMapFunction";
 import LoopComponent from "./LoopComponent";
 import NestedLoopMap from "./NestedLoopMap";
+import UseEffectDemo from "./useEffectDemo";
 function App() {
   return (
     <div>
@@ -50,7 +51,9 @@ function App() {
 
       {/* <hr /> */}
       {/* <LoopComponent /> */}
-      <NestedLoopMap />
+      {/* <NestedLoopMap /> */}
+
+      <UseEffectDemo />
     </div>
   );
 }

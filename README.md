@@ -897,3 +897,18 @@ You can easily identify a hook by the following:
   ```js
   useState, useEffect, useContext, useCustomHook;
   ```
+
+---
+
+## useEffect state
+
+## ✅ What It Covers
+
+- useState and state updates
+- useEffect usage with dependency array
+- Function called **only when `counter` changes**
+- Preventing unnecessary function calls
+- Adding multiple pieces of state (`counter` and `data`)
+- Updating different states with buttons
+
+### example code: UseEffectDemo.jsx
