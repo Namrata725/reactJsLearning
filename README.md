@@ -842,3 +842,58 @@ In this example, we have a nested loop using the `.map()` function. The outer lo
 - Categories and Products
 
 ## Example Code : NestedLoopMap.jsx, SchoolData.jsx,
+
+---
+
+## hooks
+
+### what is hooks?
+
+In old version of React i.e older than 16 where developers use call components. IN new versions mostly functional component is use. so to archeive state, life cycle, other features in functional component. we use hooks.
+
+### Popular react hooks
+
+| Hook Name           | Purpose                                     |
+| ------------------- | ------------------------------------------- |
+| `useState()`        | Add local state to a function component     |
+| `useEffect()`       | Perform side-effects (API calls, timers)    |
+| `useContext()`      | Access context data (global/shared state)   |
+| `useRef()`          | Access DOM elements or store mutable value  |
+| `useReducer()`      | Alternative to `useState` for complex state |
+| `useMemo()`         | Optimize performance (memoize values)       |
+| `useCallback()`     | Optimize performance (memoize functions)    |
+| `useLayoutEffect()` | Like `useEffect` but fires earlier          |
+
+---
+
+### Why Use Hooks?
+
+React Hooks were introduced to:
+
+- Use **stateful logic** in functional components.
+- Reuse logic between components via **custom hooks**.
+- Write **cleaner, smaller, and more readable** code.
+- Avoid confusion between `this`, binding methods, and lifecycle methods in classes.
+- Eliminate the need to convert function components into classes just to use state or lifecycle methods.
+
+---
+
+## History of Hooks
+
+- **Released:** React v16.8 (February 2019)
+- Motivation: React team wanted to solve common problems in class components:
+- Complex component logic
+- Component reusability
+- Wrapper hell (Higher-order components, render props)
+- Confusing lifecycle methods
+
+---
+
+## How to Identify a Hook?
+
+You can easily identify a hook by the following:
+
+- It **always starts with the word `use`**
+  ```js
+  useState, useEffect, useContext, useCustomHook;
+  ```
