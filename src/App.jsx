@@ -16,6 +16,7 @@ import LoopWithMapFunction from "./LoopWithMapFunction";
 import LoopComponent from "./LoopComponent";
 import NestedLoopMap from "./NestedLoopMap";
 import UseEffectDemo from "./useEffectDemo";
+import PropsEffectDemo from "./PropsEffectDemo";
 function App() {
   return (
     <div>
@@ -53,7 +54,9 @@ function App() {
       {/* <LoopComponent /> */}
       {/* <NestedLoopMap /> */}
 
-      <UseEffectDemo />
+      {/* <UseEffectDemo /> */}
+
+      <PropsEffectDemo />
     </div>
   );
 }

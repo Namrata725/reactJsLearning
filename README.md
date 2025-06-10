@@ -889,6 +889,16 @@ React Hooks were introduced to:
 
 ---
 
+## What is a Side Effect?
+
+In React, a **side effect** is any action that:
+
+- **Interacts with the outside world** (e.g., API requests, event listeners)
+- **Modifies things outside the component function** (e.g., browser DOM, local storage)
+- **Depends on external data** (e.g., props or global state)
+
+---
+
 ## How to Identify a Hook?
 
 You can easily identify a hook by the following:
@@ -900,9 +910,21 @@ You can easily identify a hook by the following:
 
 ---
 
+## Why `useEffect`?
+
+- Remove side-effects **from inside component logic** (like state updates)
+- Handle side-effects **from props**
+- Perform **data fetching**
+- Acts as a **lifecycle method replacement**
+- Use for **DOM manipulation**
+- Cleanup subscriptions or timeouts
+- Prevent **unwanted re-renders**
+
+---
+
 ## useEffect state
 
-## ✅ What It Covers
+## What It Covers
 
 - useState and state updates
 - useEffect usage with dependency array
@@ -912,3 +934,19 @@ You can easily identify a hook by the following:
 - Updating different states with buttons
 
 ### example code: UseEffectDemo.jsx
+
+## Handle side-effects **from props**
+
+This example demonstrates how to **handle side effects caused by props** using React's `useEffect` hook.
+
+---
+
+### What It Covers
+
+- How to **create reusable components**
+- How to **pass props** from parent to child component
+- How to **handle side effects** using `useEffect`
+- How to use the **dependency array** to control when effects run
+- Understanding **which effect triggers on which prop update**
+
+### example code: PropsEffectDemo.jsx , PropsEffectHandler.jsx

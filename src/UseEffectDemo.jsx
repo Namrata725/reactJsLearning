@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 function UseEffectDemo() {
   const [counter, setCounter] = useState(0);
   const [data, setData] = useState(0);
@@ -28,7 +30,7 @@ function UseEffectDemo() {
 
   return (
     <div>
-      <h3>useEffect Demo</h3>
+      <h2>useEffect Demo</h2>
 
       <h4>{counter}</h4>
       <button onClick={updateCounter}>Update Counter</button>
@@ -38,3 +40,5 @@ function UseEffectDemo() {
     </div>
   );
 }
+
+export default UseEffectDemo;
