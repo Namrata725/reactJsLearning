@@ -17,6 +17,7 @@ import LoopComponent from "./LoopComponent";
 import NestedLoopMap from "./NestedLoopMap";
 import UseEffectDemo from "./useEffectDemo";
 import PropsEffectDemo from "./PropsEffectDemo";
+import LifeCycleDemo from "./LifeCycleDemo";
 function App() {
   return (
     <div>
@@ -56,7 +57,9 @@ function App() {
 
       {/* <UseEffectDemo /> */}
 
-      <PropsEffectDemo />
+      {/* <PropsEffectDemo /> */}
+
+      <LifeCycleDemo />
     </div>
   );
 }

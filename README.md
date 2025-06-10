@@ -950,3 +950,43 @@ This example demonstrates how to **handle side effects caused by props** using R
 - Understanding **which effect triggers on which prop update**
 
 ### example code: PropsEffectDemo.jsx , PropsEffectHandler.jsx
+
+---
+
+## What is Component Life Cycle?
+
+A **component life cycle** refers to the different stages a React component goes through from the moment it's created until it is removed from the DOM.
+
+---
+
+## Life Cycle Linked to Human Life
+
+| Human Life Stage  | Component Life Cycle Phase        |
+| ----------------- | --------------------------------- |
+| Born              | Mounting (Component is added)     |
+| Grows and changes | Updating (Props or State change)  |
+| Dies              | Unmounting (Component is removed) |
+
+Just like humans have predictable stages of life, React components follow these stages during their existence in the UI.
+
+---
+
+## Phases of Component Life Cycle
+
+1. **Mounting**
+
+   - Component is rendered for the first time.
+   - `useEffect(() => {}, [])` runs once.
+
+2. **Updating**
+
+   - Component updates due to state or props changes.
+   - `useEffect(() => {}, [dependency])` runs when dependency updates.
+
+3. **Unmounting**
+   - Component is removed from the UI.
+   - Cleanup function inside `useEffect` runs.
+
+---
+
+### code example at: LifeCycleDemoHandle.jsx, LifeCycleDemo.jsx
