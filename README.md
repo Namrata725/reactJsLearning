@@ -1169,3 +1169,69 @@ import style from "./CSS/cssModuleDemo.module.css";
 ```
 
 ### example code : CssModuleDemo.jsx
+
+---
+
+## style Component
+
+### what is styled component?
+
+**Styled-components** is a library for styling React components using a special syntax called **Tagged Template Literals**. It allows you to write actual CSS code within your JavaScript, scoped to individual components.
+
+### Benefits:
+
+- No class name bugs
+- Automatic critical CSS
+- Easier maintenance of styles
+- Scoped styles by default
+
+## Install Styled-Components
+
+To install the `styled-components` package, use the following command:
+
+```
+npm install styled-components
+```
+
+To confirm the installation, check `package.json` for an entry like:
+
+```json
+"styled-components": "^x.x.x"
+```
+
+## How to Use Styled Components
+
+1. **Import styled-components**:
+
+   ```js
+   import styled from "styled-components";
+   ```
+
+2. **Create styled elements** (two ways):
+
+   - **Using JavaScript object syntax:**
+
+     ```js
+     const Heading = styled.h1({
+       color: "blue",
+       border: "1px solid blue",
+       padding: "10px",
+     });
+     ```
+
+   - **Using Tagged Template Literals:**
+     ```js
+     const StyleBtn = styled.button`
+       color: red;
+       width: 130px;
+       height: 40px;
+       margin: 20px;
+       font-size: 20px;
+     `;
+     ```
+
+3. **Use the styled elements in JSX**.
+
+## Example Code: StyleComponentDemo.jsx
+
+---

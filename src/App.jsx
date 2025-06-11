@@ -22,6 +22,7 @@ import InlineCssDemo from "./InlineCssDemo";
 import DynamicCSSDemo from "./DynamicCSSDemo";
 import ExternalCSSDemo from "./ExternalCSSDemo";
 import CssModuleDemo from "./CssModuleDemo";
+import StyleComponentDemo from "./StyleComponentDemo";
 function App() {
   return (
     <div>
@@ -70,13 +71,15 @@ function App() {
 
       {/* <ExternalCSSDemo /> */}
 
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
+      {/* <div style={{ display: "flex", flexWrap: "wrap" }}>
         <CssModuleDemo />
         <CssModuleDemo />
         <CssModuleDemo />
         <CssModuleDemo />
         <CssModuleDemo />
-      </div>
+      </div> */}
+
+      <StyleComponentDemo />
     </div>
   );
 }
