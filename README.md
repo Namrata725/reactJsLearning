@@ -1137,3 +1137,35 @@ Apply the styles using the `className` attribute in JSX:
 - Helps follow best practices and separation of concerns
 
 ---
+
+## What is CSS Module?
+
+CSS Modules is a styling approach in React that allows you to write CSS that's scoped locally to the component, rather than globally. This prevents style conflicts across components and helps manage large codebases more efficiently.
+
+## Why We Need CSS Modules
+
+In large applications, global CSS class names can easily conflict. CSS Modules help by **scoping styles locally to the component**. This ensures styles don’t clash or leak across components.
+
+### Create a CSS Module File
+
+A CSS Module file must end with `.module.css`.
+
+**Example: `user.module.css`**
+
+### Import CSS Module in a Component
+
+```jsx
+import style from "./CSS/cssModuleDemo.module.css";
+
+<div className={style.mainCard}></div>;
+```
+
+### Apply Styles in Component
+
+```jsx
+<div className={style.mainCard}>
+  <img src="..." className={style.img} />
+</div>
+```
+
+### example code : CssModuleDemo.jsx

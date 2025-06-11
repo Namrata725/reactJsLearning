@@ -21,6 +21,7 @@ import LifeCycleDemo from "./LifeCycleDemo";
 import InlineCssDemo from "./InlineCssDemo";
 import DynamicCSSDemo from "./DynamicCSSDemo";
 import ExternalCSSDemo from "./ExternalCSSDemo";
+import CssModuleDemo from "./CssModuleDemo";
 function App() {
   return (
     <div>
@@ -67,7 +68,15 @@ function App() {
 
       {/* <DynamicCSSDemo /> */}
 
-      <ExternalCSSDemo />
+      {/* <ExternalCSSDemo /> */}
+
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
+        <CssModuleDemo />
+        <CssModuleDemo />
+        <CssModuleDemo />
+        <CssModuleDemo />
+        <CssModuleDemo />
+      </div>
     </div>
   );
 }
