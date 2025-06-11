@@ -19,6 +19,7 @@ import UseEffectDemo from "./useEffectDemo";
 import PropsEffectDemo from "./PropsEffectDemo";
 import LifeCycleDemo from "./LifeCycleDemo";
 import InlineCssDemo from "./InlineCssDemo";
+import DynamicCSSDemo from "./DynamicCSSDemo";
 function App() {
   return (
     <div>
@@ -61,7 +62,9 @@ function App() {
       {/* <PropsEffectDemo /> */}
 
       {/* <LifeCycleDemo /> */}
-      <InlineCssDemo />
+      {/* <InlineCssDemo /> */}
+
+      <DynamicCSSDemo />
     </div>
   );
 }

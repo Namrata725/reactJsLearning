@@ -1039,3 +1039,59 @@ React provides **multiple ways** to apply styles to components. Each method has 
 ## Example: User Profile Cards with Inline CSS
 
 ### File: `InlineCssDemo.jsx`
+
+---
+
+## React Dynamic & Conditional Inline CSS
+
+### What This Demo Covers
+
+- **Dynamic and Conditional Inline CSS** using React.
+- How to use `useState` for **style objects**.
+- Creating **buttons to update styles dynamically**.
+- **Changing theme and layout** on button click (like background color and text color).
+- Conditionally rendering layout using a boolean flag.
+
+## Key Concepts
+
+### 1. **Dynamic and Conditional Inline CSS**
+
+React allows dynamic inline styling using JavaScript object syntax, which supports conditions and user-triggered updates.
+
+### 2. **Using `useState` to Manage Style Objects**
+
+```jsx
+const [styleCard, setCrdStyle] = useState({
+  boxShadow: "5px 5px 5px 5px",
+  margin: "20px",
+  padding: "10px",
+  width: "350px",
+});
+```
+
+### 3. **Updating Styles on Button Click**
+
+You can update styles dynamically with functions that change state:
+
+```jsx
+const updateTheme = (bg, textColor) => {
+  setCrdStyle({ ...styleCard, backgroundColor: bg });
+  setColor(textColor);
+};
+```
+
+### 4. **Toggle Layout or Style Conditionally**
+
+```jsx
+const [grid, setGrid] = useState(true);
+
+<button onClick={() => setGrid(!grid)}>Toggle Grid</button>
+
+<div style={{ display: grid ? "flex" : "block" }}>
+  {/* Cards */}
+</div>
+```
+
+### example code: DynamicCSSDemo
+
+---
