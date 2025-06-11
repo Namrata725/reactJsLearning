@@ -1,0 +1,23 @@
+.heading{
+    color: green;
+    text-align: center;
+}
+
+.img-style{
+    width: 350px;
+}
+
+.mainCard{
+    border: 1px solid green;
+    padding: 10px;
+    margin: 10px;
+    width: 400px;
+}
+
+.textDiv{
+    text-align: center;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}

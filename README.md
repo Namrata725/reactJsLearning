@@ -1095,3 +1095,45 @@ const [grid, setGrid] = useState(true);
 ### example code: DynamicCSSDemo
 
 ---
+
+## External CSS in React
+
+This demo shows how to apply **External CSS** styling in a React component using a separate CSS file.
+
+## What It Covers
+
+- What is External CSS
+- How to write External CSS
+- Creating a separate `.css` file
+- Writing styles in that file
+- Correct way to import and apply external CSS in React
+
+## How to Use External CSS in React
+
+### 1. Create a CSS File
+
+Create a file named (for example) `ExternalCSSDemo.css` in the same directory as your component.
+
+### 2. Import CSS File into React Component
+
+```js
+import "./ExternalCSSDemo.css";
+```
+
+### 3. Use Class Names
+
+Apply the styles using the `className` attribute in JSX:
+
+```jsx
+<h2 className="heading">External Style</h2>
+<img className="img-style" src="..." alt="" />
+```
+
+## Benefits
+
+- Cleaner JSX structure
+- Easy to maintain and update styles
+- Reusable across components
+- Helps follow best practices and separation of concerns
+
+---
