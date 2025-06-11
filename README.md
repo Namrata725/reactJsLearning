@@ -1235,3 +1235,35 @@ To confirm the installation, check `package.json` for an entry like:
 ## Example Code: StyleComponentDemo.jsx
 
 ---
+
+## Add Bootstrap in React
+
+### What is Bootstrap?
+
+Bootstrap is a popular open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS- and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.
+
+## What it Covers
+
+- What is Bootstrap
+- How to install Bootstrap
+- How to import and use Bootstrap in React
+- Bootstrap component examples: Button, Alert, Navbar
+
+## How to Install Bootstrap
+
+To install Bootstrap and React-Bootstrap in a React project, use the following commands:
+
+- **npm install react-bootstrap bootstrap**
+- Then confirm installation in `package.json`.
+
+## How to Import Bootstrap in React
+
+To use Bootstrap globally in your app, import Bootstrap’s CSS file in `main.jsx` or `index.js`:
+
+```js
+import "bootstrap/dist/css/bootstrap.min.css";
+```
+
+## example code: BootstrapDemo.jsx
+
+---

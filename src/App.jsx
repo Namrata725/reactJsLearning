@@ -23,6 +23,7 @@ import DynamicCSSDemo from "./DynamicCSSDemo";
 import ExternalCSSDemo from "./ExternalCSSDemo";
 import CssModuleDemo from "./CssModuleDemo";
 import StyleComponentDemo from "./StyleComponentDemo";
+import BootstrapDemo from "./BootstrapDemo";
 function App() {
   return (
     <div>
@@ -79,7 +80,8 @@ function App() {
         <CssModuleDemo />
       </div> */}
 
-      <StyleComponentDemo />
+      {/* <StyleComponentDemo /> */}
+      <BootstrapDemo />
     </div>
   );
 }
