@@ -1,109 +1,98 @@
 import { useState } from "react";
 
 function DynamicCSSDemo() {
-  const [styleCard, setCrdStyle] = useState({
-    boxShadow: "5px 5px 5px 5px",
+  const [cardStyle, setCardStyle] = useState({
+    padding: "20px",
+    border: "2px solid green",
+    width: "300px",
     margin: "20px",
-    padding: "10px",
-    width: "350px",
   });
 
-  const [textColor, setColor] = useState("blue");
-
-  const [grid, setGrid] = useState(true);
+  const [Grid, setGrid] = useState(true);
 
   const updateTheme = (bg, textColor) => {
-    setCrdStyle({ ...styleCard, backgroundColor: bg });
-    setColor(textColor);
+    setCardStyle({ ...cardStyle, backgroundColor: bg, color: textColor });
   };
 
   return (
     <div>
-      <h2 style={{ color: "red", textAlign: "center" }}>Dynamic css Demo</h2>
-
+      <h4 style={{ textAlign: "center", color: "Green" }}>Dynamic css Demo</h4>
       <button
         onClick={() => {
-          updateTheme("orange", "white");
+          updateTheme("green", "white");
         }}
       >
-        Orange Theme
+        Dark theme
       </button>
       <button
         onClick={() => {
-          updateTheme("white", "blue");
+          updateTheme("white", "green");
         }}
       >
-        Default Theme
+        Lite theme
       </button>
-
       <button
         onClick={() => {
-          setGrid(!grid);
+          setGrid(!Grid);
         }}
       >
-        {" "}
-        Toggle Grid
+        Grid Toggle
       </button>
 
-      <div style={{ display: grid ? "flex" : "block", flexWrap: "wrap" }}>
-        <div style={styleCard}>
-          <div>
-            <img
-              src="https://cdn.pixabay.com/photo/2018/08/04/11/30/draw-3583548_1280.png"
-              alt="img"
-              style={{ width: "300px", padding: "30px" }}
-            />
-          </div>
-
-          <div>
-            <h4 style={{ color: textColor }}>Sunset</h4>
-            <h5 style={{ color: textColor }}>The boy is Reading the book </h5>
-          </div>
+      <div style={{ display: Grid ? "flex" : "block", flexWrap: "wrap" }}>
+        <div style={cardStyle}>
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/022/347/007/non_2x/little-monkey-smile-photo.jpg"
+            alt=""
+            style={{ width: "300px" }}
+          />
+          <p>
+            <strong>Smiling monkey</strong>
+          </p>
         </div>
 
-        <div style={styleCard}>
-          <div>
-            <img
-              src="https://cdn.pixabay.com/photo/2018/08/04/11/30/draw-3583548_1280.png"
-              alt="img"
-              style={{ width: "300px", padding: "30px" }}
-            />
-          </div>
-
-          <div>
-            <h4 style={{ color: textColor }}>Sunset</h4>
-            <h5 style={{ color: textColor }}>The boy is Reading the book </h5>
-          </div>
+        <div style={cardStyle}>
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/022/347/007/non_2x/little-monkey-smile-photo.jpg"
+            alt=""
+            style={{ width: "300px" }}
+          />
+          <p>
+            <strong>Smiling monkey</strong>
+          </p>
         </div>
 
-        <div style={styleCard}>
-          <div>
-            <img
-              src="https://cdn.pixabay.com/photo/2018/08/04/11/30/draw-3583548_1280.png"
-              alt="img"
-              style={{ width: "300px", padding: "30px" }}
-            />
-          </div>
-
-          <div>
-            <h4 style={{ color: textColor }}>Sunset</h4>
-            <h5 style={{ color: textColor }}>The boy is Reading the book </h5>
-          </div>
+        <div style={cardStyle}>
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/022/347/007/non_2x/little-monkey-smile-photo.jpg"
+            alt=""
+            style={{ width: "300px" }}
+          />
+          <p>
+            <strong>Smiling monkey</strong>
+          </p>
         </div>
 
-        <div style={styleCard}>
-          <div>
-            <img
-              src="https://cdn.pixabay.com/photo/2018/08/04/11/30/draw-3583548_1280.png"
-              alt="img"
-              style={{ width: "300px", padding: "30px" }}
-            />
-          </div>
+        <div style={cardStyle}>
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/022/347/007/non_2x/little-monkey-smile-photo.jpg"
+            alt=""
+            style={{ width: "300px" }}
+          />
+          <p>
+            <strong>Smiling monkey</strong>
+          </p>
+        </div>
 
-          <div>
-            <h4 style={{ color: textColor }}>Sunset</h4>
-            <h5 style={{ color: textColor }}>The boy is Reading the book </h5>
-          </div>
+        <div style={cardStyle}>
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/022/347/007/non_2x/little-monkey-smile-photo.jpg"
+            alt=""
+            style={{ width: "300px" }}
+          />
+          <p>
+            <strong>Smiling monkey</strong>
+          </p>
         </div>
       </div>
     </div>
