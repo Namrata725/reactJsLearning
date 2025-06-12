@@ -1264,6 +1264,22 @@ To use Bootstrap globally in your app, import Bootstrap’s CSS file in `main.js
 import "bootstrap/dist/css/bootstrap.min.css";
 ```
 
-## example code: BootstrapDemo.jsx
+## What is useRef?
+
+- `useRef` is a **React Hook** that allows you to directly access and interact with a DOM element.
+- Unlike state, changing a `ref` value **does not cause re-render**.
+
+## What it Covers
+
+- `useRef` helps manage **uncontrolled components**.
+- You can directly **focus, read, or modify** the DOM element without causing a re-render.
+- Useful for:
+
+  - Setting focus
+  - Controlling media playback
+  - Animating elements
+  - Accessing previous state values (advanced)
+
+## Example Code: `UseRefDemo.jsx`
 
 ---

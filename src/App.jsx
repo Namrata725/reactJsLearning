@@ -24,6 +24,7 @@ import ExternalCSSDemo from "./ExternalCSSDemo";
 import CssModuleDemo from "./CssModuleDemo";
 import StyleComponentDemo from "./StyleComponentDemo";
 import BootstrapDemo from "./BootstrapDemo";
+import UseRefDemo from "./UseRefDemo";
 function App() {
   return (
     <div>
@@ -81,7 +82,9 @@ function App() {
       </div> */}
 
       {/* <StyleComponentDemo /> */}
-      <BootstrapDemo />
+      {/* <BootstrapDemo /> */}
+
+      <UseRefDemo />
     </div>
   );
 }
