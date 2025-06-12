@@ -25,6 +25,7 @@ import CssModuleDemo from "./CssModuleDemo";
 import StyleComponentDemo from "./StyleComponentDemo";
 import BootstrapDemo from "./BootstrapDemo";
 import UseRefDemo from "./UseRefDemo";
+import Uncontrolled from "./Uncontrolled";
 function App() {
   return (
     <div>
@@ -84,7 +85,8 @@ function App() {
       {/* <StyleComponentDemo /> */}
       {/* <BootstrapDemo /> */}
 
-      <UseRefDemo />
+      {/* <UseRefDemo /> */}
+      <Uncontrolled />
     </div>
   );
 }

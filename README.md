@@ -1283,3 +1283,23 @@ import "bootstrap/dist/css/bootstrap.min.css";
 ## Example Code: `UseRefDemo.jsx`
 
 ---
+
+## Uncontrolled Component and useRef Demo
+
+## What it Covers
+
+### What is an Uncontrolled Component?
+
+An uncontrolled component is a form input that is handled by the DOM itself, rather than React. You typically access its value using a ref or by directly querying the DOM.
+
+### Using `querySelector`
+
+This approach uses standard DOM methods to access the input field values.
+
+### Using `useRef`
+
+This approach leverages React's `useRef` hook to directly access DOM elements and their current values.
+
+## example code: Uncontrolled.jsx;
+
+---
