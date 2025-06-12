@@ -27,6 +27,7 @@ import BootstrapDemo from "./BootstrapDemo";
 import UseRefDemo from "./UseRefDemo";
 import Uncontrolled from "./Uncontrolled";
 import FunctionProps from "./FunctionProps";
+import ForwardRefDemo from "./ForwardRefDemo";
 function App() {
   return (
     <div>
@@ -89,7 +90,9 @@ function App() {
       {/* <UseRefDemo /> */}
       {/* <Uncontrolled /> */}
 
-      <FunctionProps />
+      {/* <FunctionProps /> */}
+
+      <ForwardRefDemo />
     </div>
   );
 }

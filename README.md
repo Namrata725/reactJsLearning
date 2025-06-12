@@ -1317,8 +1317,6 @@ This approach leverages React's `useRef` hook to directly access DOM elements an
 
 In React, **functions can be passed as props** from a parent component to a child component. This technique is used when the child needs to communicate back to the parent or trigger some logic defined in the parent.
 
----
-
 ## Parent Component Example
 
 **File: `functionProps.jsx`**
@@ -1331,3 +1329,70 @@ In React, **functions can be passed as props** from a parent component to a chil
 
 - When you click the **User Display!!** button, it triggers `displayName(name)` in the parent.
 - When you click **get function**, it runs `getFunction()` from the parent.
+
+---
+
+# React `forwardRef`
+
+## What it Covers
+
+- What is `forwardRef`?
+- How to implement `forwardRef` before React version 19.
+- How to implement `forwardRef` in React version 19 and above.
+
+---
+
+## What is `forwardRef`?
+
+`forwardRef` is a React API used to forward a `ref` from a parent component to a child component. This is useful when the parent needs to directly interact with a DOM element inside the child component.
+
+---
+
+### `ForwardRefDemo.jsx`
+
+```jsx
+import { useRef } from "react";
+import ForwardRefUser from "./ForwardRefUser";
+
+function ForwardRefDemo() {
+  const inputRef = useRef(null);
+
+  const updateInput = () => {
+    inputRef.current.value = 1000;
+    inputRef.current.focus();
+  };
+
+  return (
+    <div>
+      <h1>App</h1>
+      <h4>Forward ref</h4>
+      <User ref={inputRef} />
+      <button onClick={updateInput}>Update input</button>
+    </div>
+  );
+}
+
+export default ForwardRefDemo;
+```
+
+### `ForwardRefUser.jsx` (React < 19)
+
+```jsx
+import { forwardRef } from "react";
+
+function ForwardRefUser(props, ref) {
+  return (
+    <div>
+      <input type="text" ref={ref} />
+    </div>
+  );
+}
+
+export default forwardRef(ForwardRefUser);
+```
+
+## With React 19 and above (no need to use `forwardRef`)
+
+### `ForwardRefUser.jsx` (React 19+)
+
+---
