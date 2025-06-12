@@ -26,6 +26,7 @@ import StyleComponentDemo from "./StyleComponentDemo";
 import BootstrapDemo from "./BootstrapDemo";
 import UseRefDemo from "./UseRefDemo";
 import Uncontrolled from "./Uncontrolled";
+import FunctionProps from "./FunctionProps";
 function App() {
   return (
     <div>
@@ -86,7 +87,9 @@ function App() {
       {/* <BootstrapDemo /> */}
 
       {/* <UseRefDemo /> */}
-      <Uncontrolled />
+      {/* <Uncontrolled /> */}
+
+      <FunctionProps />
     </div>
   );
 }

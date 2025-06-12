@@ -1303,3 +1303,31 @@ This approach leverages React's `useRef` hook to directly access DOM elements an
 ## example code: Uncontrolled.jsx;
 
 ---
+
+## Passing Function as Props in React
+
+### What It Covers
+
+- What is **passing function as props** in React?
+- Why do we need to pass function as props?
+- How to make **parent and child components**
+- How to **call parent function from child** using props
+
+## Explanation
+
+In React, **functions can be passed as props** from a parent component to a child component. This technique is used when the child needs to communicate back to the parent or trigger some logic defined in the parent.
+
+---
+
+## Parent Component Example
+
+**File: `functionProps.jsx`**
+
+## Child Component Example
+
+**File: `FunctionPropsUser.jsx`**
+
+## Output
+
+- When you click the **User Display!!** button, it triggers `displayName(name)` in the parent.
+- When you click **get function**, it runs `getFunction()` from the parent.
