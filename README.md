@@ -1416,3 +1416,24 @@ export default forwardRef(ForwardRefUser);
 # example Code: UseFormStatusHookDemo.jsx
 
 ---
+
+# useTransition Hook in React
+
+## What it Covers
+
+- What is `useTransition`?
+- How to use `useTransition` with an example
+- Create buttons with async logic using both `useState` and `useTransition`
+
+## What is `useTransition`?
+
+The `useTransition` hook is used to mark state updates as non-urgent. This can be useful for keeping the app responsive when rendering large UI trees.
+
+## example code: UseTransitionDemo.jsx
+
+## exaination of code
+
+- `useState` is used for normal state management and can cause blocking behavior during updates.
+- `useTransition` helps prioritize urgent updates and keeps less important tasks in the background.
+
+---

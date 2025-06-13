@@ -29,6 +29,7 @@ import Uncontrolled from "./Uncontrolled";
 import FunctionProps from "./FunctionProps";
 import ForwardRefDemo from "./ForwardRefDemo";
 import UseFormSatusHookDemo from "./UseFormSatusHookDemo";
+import UserTransitionDemo from "./UseTransitionDemo";
 function App() {
   return (
     <div>
@@ -95,7 +96,9 @@ function App() {
 
       {/* <ForwardRefDemo /> */}
 
-      <UseFormSatusHookDemo />
+      {/* <UseFormSatusHookDemo /> */}
+
+      <UserTransitionDemo />
     </div>
   );
 }
