@@ -28,6 +28,7 @@ import UseRefDemo from "./UseRefDemo";
 import Uncontrolled from "./Uncontrolled";
 import FunctionProps from "./FunctionProps";
 import ForwardRefDemo from "./ForwardRefDemo";
+import UseFormSatusHookDemo from "./UseFormSatusHookDemo";
 function App() {
   return (
     <div>
@@ -92,7 +93,9 @@ function App() {
 
       {/* <FunctionProps /> */}
 
-      <ForwardRefDemo />
+      {/* <ForwardRefDemo /> */}
+
+      <UseFormSatusHookDemo />
     </div>
   );
 }

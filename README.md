@@ -1396,3 +1396,23 @@ export default forwardRef(ForwardRefUser);
 ### `ForwardRefUser.jsx` (React 19+)
 
 ---
+
+## useFormStatus and useFormState in React
+
+## What it covers
+
+- What is `useFormStatus`?
+- Example code using `useFormStatus`
+- Make a form using `<form>` tag
+- Handle form submission with `action`
+- Show status during form submission (like a loader or disable button)
+
+## what is `useFormStatus`
+
+`useFormStatus` is a React hook provided by **react-dom** that helps track the pending state of a form submission.You can use it to show loading indicators, disable buttons, or give feedback while the form is submitting.`useFormStatus` is useful in forms that need loading or state indication.IT is ideal for **Submit** button status control.
+
+---
+
+# example Code: UseFormStatusHookDemo.jsx
+
+---
