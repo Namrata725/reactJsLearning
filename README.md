@@ -1455,3 +1455,29 @@ Derived state refers to values in your component that are **calculated based on 
 - Reduces re-renders and boosts performance.
 
 ## Demo code file: DerivedDemo.jsx
+
+---
+
+## Lifting Up State in React JS
+
+### What it covers
+
+- What is lifting up state?
+- Creating 2 components
+- Sharing data between components
+
+---
+
+## What is Lifting Up State?
+
+Lifting state up means moving state from a child component to a common ancestor (usually the parent) to share data between multiple child components.
+Instead of both components maintaining their own version of state, the shared state lives in the parent and is passed down as props.
+This allows components to stay in sync.
+
+## Code Example
+
+### Parent Component: `LiftUpStateDemo.jsx`
+
+### Child Component 1:` LiftingUpAddUser.jsx`
+
+### Child Component 2: `LiftingUpDisplayUser.jsx`

@@ -31,6 +31,7 @@ import ForwardRefDemo from "./ForwardRefDemo";
 import UseFormSatusHookDemo from "./UseFormSatusHookDemo";
 import UserTransitionDemo from "./UseTransitionDemo";
 import DerivedDemo from "./DerivedDemo";
+import LiftUpStateDemo from "./LiftUpStateDemo";
 function App() {
   return (
     <div>
@@ -100,7 +101,9 @@ function App() {
       {/* <UseFormSatusHookDemo /> */}
 
       {/* <UserTransitionDemo /> */}
-      <DerivedDemo />
+      {/* <DerivedDemo /> */}
+
+      <LiftUpStateDemo />
     </div>
   );
 }
