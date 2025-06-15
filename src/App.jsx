@@ -30,6 +30,7 @@ import FunctionProps from "./FunctionProps";
 import ForwardRefDemo from "./ForwardRefDemo";
 import UseFormSatusHookDemo from "./UseFormSatusHookDemo";
 import UserTransitionDemo from "./UseTransitionDemo";
+import DerivedDemo from "./DerivedDemo";
 function App() {
   return (
     <div>
@@ -98,7 +99,8 @@ function App() {
 
       {/* <UseFormSatusHookDemo /> */}
 
-      <UserTransitionDemo />
+      {/* <UserTransitionDemo /> */}
+      <DerivedDemo />
     </div>
   );
 }

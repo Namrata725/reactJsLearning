@@ -1437,3 +1437,21 @@ The `useTransition` hook is used to mark state updates as non-urgent. This can b
 - `useTransition` helps prioritize urgent updates and keeps less important tasks in the background.
 
 ---
+
+## Derived State in React JS
+
+### What is Derived State?
+
+Derived state refers to values in your component that are **calculated based on other state or props**, rather than stored as their own state.
+
+- Avoids unnecessary state duplication.
+- Improves performance and simplifies state management.
+- Typically represented as **variables/constants** within the component.
+
+### Why Use Derived State?
+
+- Prevents storing data that can be calculated from existing state.
+- Helps avoid bugs from keeping multiple pieces of state in sync.
+- Reduces re-renders and boosts performance.
+
+## Demo code file: DerivedDemo.jsx
