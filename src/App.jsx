@@ -32,6 +32,7 @@ import UseFormSatusHookDemo from "./UseFormSatusHookDemo";
 import UserTransitionDemo from "./UseTransitionDemo";
 import DerivedDemo from "./DerivedDemo";
 import LiftUpStateDemo from "./LiftUpStateDemo";
+import UpdatingObjInState from "./UpdatingObjInState";
 function App() {
   return (
     <div>
@@ -103,7 +104,8 @@ function App() {
       {/* <UserTransitionDemo /> */}
       {/* <DerivedDemo /> */}
 
-      <LiftUpStateDemo />
+      {/* <LiftUpStateDemo /> */}
+      <UpdatingObjInState />
     </div>
   );
 }

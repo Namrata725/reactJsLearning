@@ -1481,3 +1481,21 @@ This allows components to stay in sync.
 ### Child Component 1:` LiftingUpAddUser.jsx`
 
 ### Child Component 2: `LiftingUpDisplayUser.jsx`
+
+---
+
+## React Concept: Updating Object in State
+
+## What it covers
+
+- Updating object in state
+- Make object in state
+- Display object values
+- Update object keys
+- Update nested object keys
+
+## updating state in state in react
+
+In React, "updating object in state" means changing the values inside an object that is stored using useState.
+
+## example code : UpdatingObjInState.jsx
