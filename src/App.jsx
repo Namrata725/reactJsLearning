@@ -33,6 +33,9 @@ import UserTransitionDemo from "./UseTransitionDemo";
 import DerivedDemo from "./DerivedDemo";
 import LiftUpStateDemo from "./LiftUpStateDemo";
 import UpdatingObjInState from "./UpdatingObjInState";
+
+import ArrayUpdateDemo from "./ArrayUpdateDemo";
+
 function App() {
   return (
     <div>
@@ -105,7 +108,9 @@ function App() {
       {/* <DerivedDemo /> */}
 
       {/* <LiftUpStateDemo /> */}
-      <UpdatingObjInState />
+      {/* <UpdatingObjInState /> */}
+
+      <ArrayUpdateDemo />
     </div>
   );
 }

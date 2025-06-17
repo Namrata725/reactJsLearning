@@ -1499,3 +1499,66 @@ This allows components to stay in sync.
 In React, "updating object in state" means changing the values inside an object that is stored using useState.
 
 ## example code : UpdatingObjInState.jsx
+
+---
+
+## Topic: Updating Arrays and Array of Objects in React State
+
+## What it Covers
+
+- Updating a regular array in React state
+- Updating an array of objects in React state
+- Using the `useState` hook
+- Handling user input to update specific elements
+
+### 1. Why Do We Need This?
+
+In React, arrays and objects in state **should not be mutated directly**. We always create a **new copy** (using spread operator or other methods), make the changes, and then update the state.
+
+This ensures React detects changes and re-renders the UI.
+
+---
+
+### 2. Regular Array Update
+
+In the `UserList` component:
+
+```js
+const [data, setData] = useState(["John", "Jane", "Doe"]);
+```
+
+To update the last element of the array:
+
+```js
+data[data.length - 1] = newValue;
+setData([...data]); // spreads into a new array
+```
+
+This updates the state correctly.
+
+---
+
+### 3. Array of Objects Update
+
+In the `UserDetailsList` component:
+
+```js
+const [dataDetails, setDetails] = useState([
+  { name: "John", age: 25 },
+  { name: "Jane", age: 30 },
+  { name: "Doe", age: 22 },
+]);
+```
+
+To update the `age` of the last object:
+
+```js
+dataDetails[dataDetails.length - 1].age = newAge;
+setDetails([...dataDetails]);
+```
+
+Again, you spread into a new array so React can detect the change.
+
+## demo file: ArrayUpdateDemo.jsx
+
+---
