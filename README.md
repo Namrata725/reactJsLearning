@@ -1562,3 +1562,32 @@ Again, you spread into a new array so React can detect the change.
 ## demo file: ArrayUpdateDemo.jsx
 
 ---
+
+### useActionState Hook in React
+
+This example demonstrates how to use the `useActionState` hook in React to manage form submission and display response data or errors dynamically.
+
+### What it Covers
+
+- What is `useActionState`?
+- How to use it in a form
+- Handle asynchronous actions like form submission
+- Show pending state and results
+
+## Why use `useActionState`?
+
+- It handles stateful logic within forms easily.
+- Manages async actions like form submission.
+- Cleaner than managing multiple state variables.
+
+## Output Behavior
+
+- Displays a form with fields for `name` and `password`.
+- When submitted:
+  - Shows "Submitting..." while waiting.
+  - Displays an error if fields are empty.
+  - Displays a success message and submitted data otherwise.
+
+### example code : UseActionStateDemo.jsx
+
+---

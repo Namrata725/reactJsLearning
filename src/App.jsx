@@ -35,6 +35,7 @@ import LiftUpStateDemo from "./LiftUpStateDemo";
 import UpdatingObjInState from "./UpdatingObjInState";
 
 import ArrayUpdateDemo from "./ArrayUpdateDemo";
+import UseActionStateDemo from "./UseActionStateDemo";
 
 function App() {
   return (
@@ -110,7 +111,8 @@ function App() {
       {/* <LiftUpStateDemo /> */}
       {/* <UpdatingObjInState /> */}
 
-      <ArrayUpdateDemo />
+      {/* <ArrayUpdateDemo /> */}
+      <UseActionStateDemo />
     </div>
   );
 }
