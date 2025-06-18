@@ -38,7 +38,7 @@ import ArrayUpdateDemo from "./ArrayUpdateDemo";
 import UseActionStateDemo from "./UseActionStateDemo";
 import UseIDDemo from "./UseIDDemo";
 import FragmentDemo from "./FragmentDemo";
-
+import CustomHook from "./CustomHook";
 function App() {
   return (
     <div>
@@ -98,7 +98,8 @@ function App() {
       {/* <ArrayUpdateDemo /> */}
       {/* <UseActionStateDemo /> */}
       {/* <UseIDDemo /> */}
-      <FragmentDemo />;
+      {/* <FragmentDemo />; */}
+      <CustomHook />
     </div>
   );
 }

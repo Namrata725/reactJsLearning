@@ -2301,3 +2301,34 @@ if (isLoggedIn) {
 | Regular (non-hook) functions     | Only call hooks inside React functional components or custom hooks |
 
 ---
+
+## Custom React Hook: `useToggleHook`
+
+## What it Covers
+
+- What is a custom hook?
+- Creating and using a `useToggleHook`
+- Reusing toggle logic for multiple states
+- Toggle boolean state and set explicitly to true/false
+
+---
+
+## What is a Custom Hook?
+
+A **custom hook** in React is a JavaScript function whose name starts with `"use"` and that can call other hooks. It helps you **encapsulate reusable stateful logic**.
+
+---
+
+## Why `useToggleHook`?
+
+Managing boolean states like show/hide or on/off is a very common pattern in React. Instead of repeating the same toggle logic using `useState`, you can simplify it with a **custom toggle hook**.
+
+---
+
+| Declare Hook | `const [value, toggleValue] = useToggleHook(true);` |
+| Toggle Logic | `setValue(!value);` |
+| Set Boolean | `if (typeof val !== "boolean") { ... } else { setValue(val); }` |
+| Conditional UI | `{value ? <h3>Custom Hook Demo</h3> : null}` |
+| Usage Pattern | `<button onClick={() => toggleValue(true)}>Show</button>` |
+
+---
