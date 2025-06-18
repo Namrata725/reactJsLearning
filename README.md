@@ -2144,7 +2144,7 @@ Again, you spread into a new array so React can detect the change.
   - `action`: a handler to be used as the form’s `action` prop
   - `pending`: boolean that indicates if the action is in progress
 
-  ## 📦 Important Chunk of Code
+  ## Important Chunk of Code
 
 ```jsx
 const handleSubmit = async (prevData, formData) => {
@@ -2241,5 +2241,63 @@ A **Fragment** is a special component provided by React (`<Fragment>` or shortha
 ---
 
 ### Example: `FragmentDemo.jsx`
+
+---
+
+## Rules of React JS Hooks
+
+React Hooks are powerful features introduced in React 16.8 that allow you to use state and other React features without writing a class component. However, there are **strict rules** to follow for Hooks to work correctly.
+
+---
+
+## Core Rules for Using Hooks
+
+### 1. **Hooks must start with `use`**
+
+All hook names **must start with** the `use` prefix.
+
+## Correct:
+
+```js
+useState(), useEffect(), useRef(), useCustomHook();
+```
+
+## Incorrect:
+
+```jsx
+stateHook(), myEffectHook(); // These won’t work as Hooks
+```
+
+### 2. Hooks must be called at the top level
+
+Only call Hooks at the top level of your React function. Never call them inside conditions, loops, or nested blocks.
+
+### correct
+
+```jsx
+function MyComponent() {
+  const [count, setCount] = useState(0); // ✅ Safe
+}
+```
+
+### Incorrect
+
+```jsx
+if (isLoggedIn) {
+  const [user, setUser] = useState(null); //   Not allowed
+}
+```
+
+## What You Should Avoid
+
+| Don't Call Hooks In...           | Reason                                                             |
+| -------------------------------- | ------------------------------------------------------------------ |
+| Inside conditions (`if`, `else`) | Breaks consistent hook order across renders                        |
+| Inside loops (`for`, `while`)    | Each render may skip or add hook calls                             |
+| After `return` statement         | The code is unreachable; hook never runs                           |
+| Event handlers (`onClick`, etc.) | They are not part of the render cycle                              |
+| Class components                 | Hooks only work in functional components                           |
+| Try/catch/finally blocks         | Similar to conditionals — can break hook call order                |
+| Regular (non-hook) functions     | Only call hooks inside React functional components or custom hooks |
 
 ---
