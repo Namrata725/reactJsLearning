@@ -37,6 +37,7 @@ import UpdatingObjInState from "./UpdatingObjInState";
 import ArrayUpdateDemo from "./ArrayUpdateDemo";
 import UseActionStateDemo from "./UseActionStateDemo";
 import UseIDDemo from "./UseIDDemo";
+import FragmentDemo from "./FragmentDemo";
 
 function App() {
   return (
@@ -63,29 +64,19 @@ function App() {
 
       <GetInputField />
       <hr /> */}
-
       {/* <ControlComponent /> */}
-
       {/* <HandleCheckbox /> */}
       {/* <HandleRadioButtonAndDropdown /> */}
-
       {/* <LoopWithMapFunction /> */}
-
       {/* <hr /> */}
       {/* <LoopComponent /> */}
       {/* <NestedLoopMap /> */}
-
       {/* <UseEffectDemo /> */}
-
       {/* <PropsEffectDemo /> */}
-
       {/* <LifeCycleDemo /> */}
       {/* <InlineCssDemo /> */}
-
       {/* <DynamicCSSDemo /> */}
-
       {/* <ExternalCSSDemo /> */}
-
       {/* <div style={{ display: "flex", flexWrap: "wrap" }}>
         <CssModuleDemo />
         <CssModuleDemo />
@@ -93,28 +84,21 @@ function App() {
         <CssModuleDemo />
         <CssModuleDemo />
       </div> */}
-
       {/* <StyleComponentDemo /> */}
       {/* <BootstrapDemo /> */}
-
       {/* <UseRefDemo /> */}
       {/* <Uncontrolled /> */}
-
       {/* <FunctionProps /> */}
-
       {/* <ForwardRefDemo /> */}
-
       {/* <UseFormSatusHookDemo /> */}
-
       {/* <UserTransitionDemo /> */}
       {/* <DerivedDemo /> */}
-
       {/* <LiftUpStateDemo /> */}
       {/* <UpdatingObjInState /> */}
-
       {/* <ArrayUpdateDemo /> */}
       {/* <UseActionStateDemo /> */}
-      <UseIDDemo />
+      {/* <UseIDDemo /> */}
+      <FragmentDemo />;
     </div>
   );
 }

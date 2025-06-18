@@ -2204,3 +2204,42 @@ You can then use this id to generate unique element IDs like so:
 ```
 
 ## Example Code: UseIDDemo.jsx
+
+---
+
+## React Fragment
+
+### What it Covers
+
+- What is a Fragment?
+- Why use Fragment?
+- Common issues it solves
+- Code Example
+
+---
+
+### What is a Fragment?
+
+A **Fragment** is a special component provided by React (`<Fragment>` or shorthand `<>`) that lets you return multiple elements **without adding extra nodes** to the DOM.
+
+---
+
+### Why Use Fragment?
+
+- To **group multiple children** without introducing unnecessary wrappers like `<div>`.
+- Helps **keep the DOM clean** and improves performance by avoiding unnecessary nesting.
+- Useful when returning multiple elements from a component.
+
+---
+
+### Issues Without Fragment
+
+- Wrapping everything inside `<div>` or other tags creates **extra DOM elements**.
+- These extra elements can **break layouts** or affect CSS styling and accessibility.
+- Using `<Fragment>` helps avoid this issue.
+
+---
+
+### Example: `FragmentDemo.jsx`
+
+---
