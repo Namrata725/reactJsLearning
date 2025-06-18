@@ -2170,3 +2170,37 @@ const [data, action, pending] = useActionState(handleSubmit, undefined);
 ```
 
 ## Example Code: `UseActionStateDemo.jsx`
+
+---
+
+## useId Hook in React
+
+### What is `useId`?
+
+`useId` is a built-in React hook introduced in **React 18**. It generates a **unique, stable ID** that is consistent across server and client, useful especially when rendering multiple components that require unique form input identifiers.
+
+---
+
+### Why Use `useId`?
+
+- Prevents duplicate `id` attributes when rendering multiple instances of a component.
+- Useful in forms to link `<label>` with corresponding `<input>` using `htmlFor`.
+- Ensures accessibility and avoids potential DOM conflicts.
+
+---
+
+### How to Use `useId`
+
+```js
+const id = useId();
+```
+
+You can then use this id to generate unique element IDs like so:
+
+```jsx
+
+<label htmlFor={id + "-email"}>Email:</label>
+<input id={id + "-email"} />
+```
+
+## Example Code: UseIDDemo.jsx
