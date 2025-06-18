@@ -601,6 +601,8 @@ When you pass the `color` prop, it overrides the default color:
 </Wrapper>
 ```
 
+## example code: MoreProps.jsx
+
 ---
 
 ## GetInputField Component
@@ -676,84 +678,182 @@ A controlled component typically:
 **Validation and Manipulation Before Submit**: Data can be validated, formatted, or transformed in the component itself.  
 **Dynamic Updates**: Inputs can respond to state changes instantly (e.g., resetting, conditional rendering).
 
-### Example Code: Controlled Component in React
+### Handling Multiple Inputs in State
 
-file name: ControlledComponent.jsx
+Each input field is tied to its own state variable. The `onChange` event updates the corresponding state.
+
+```jsx
+const [name, setName] = useState("");
+const [password, setPassword] = useState("");
+const [email, setEmail] = useState("");
+
+<input value={name} onChange={(e) => setName(e.target.value)} />
+<input value={password} onChange={(e) => setPassword(e.target.value)} />
+<input value={email} onChange={(e) => setEmail(e.target.value)} />
+```
+
+### Clear All Input Fields with One Click
+
+To reset all fields, you simply update each state variable back to an empty string.
+
+```jsx
+const handleClear = () => {
+  setName("");
+  setPassword("");
+  setEmail("");
+};
+
+<button type="button" onClick={handleClear}>
+  Clear
+</button>;
+```
+
+### Example Code: ControlledComponent.jsx
 
 ---
 
 ## Handle Checkbox in React
 
-In this example, we create multiple checkboxes representing various skills. We use a state variable to keep track of the selected skills.
+This example demonstrates how to manage multiple checkbox selections in React using state. Each time a checkbox is selected or deselected, the state is updated accordingly.
 
-### what it covers
+---
+
+### What it Covers
 
 - **Create multiple checkboxes**
 - **Define a state variable to track checkbox values**
 - **Add checkbox value to state when checked**
 - **Remove checkbox value from state when unchecked**
 
-### Benefits
-
-- Easy management of multiple selections
-- Dynamic state updates based on user interaction
-- Helps with forms that require multiple selections
-
 ---
 
-### Example Code: Handle Checkbox in React file: HandleCheckbox.jsx
+### State Setup for Checkboxes
+
+An array is used to store selected skill values.
+
+```jsx
+const [skills, setskills] = useState([]);
+```
+
+### Event Handler Logic
+
+The HandleCheckboxChange function adds a skill if it's checked and removes it if it's unchecked.
+
+```jsx
+const HandleCheckboxChange = (event) => {
+  const { value, checked } = event.target;
+
+  if (checked) {
+    setskills([...skills, value]); // Add skill
+  } else {
+    setskills(skills.filter((skill) => skill !== value)); // Remove skill
+  }
+};
+```
+
+### JSX: Render Checkboxes
+
+Each checkbox is linked to the same change handler. The value represents the skill name.
+
+```jsx
+<input
+  type="checkbox"
+  value="JavaScript"
+  id="JavaScript"
+  onChange={HandleCheckboxChange}
+/>
+<label htmlFor="JavaScript">JavaScript</label>
+
+```
+
+### Benefits
+
+- Easy tracking of multiple selections.
+- Real-time dynamic updates.
+- Great for forms with multi-select options.
+
+### Example Code: HandleCheckbox.jsx
+
+---
 
 ## Handling Radio Buttons and Dropdown in React
 
-This example demonstrates how to handle radio buttons and dropdown lists using controlled components in React.
+This component demonstrates how to handle **radio buttons** and **dropdown lists** using controlled components in React.
 
-### what it covers
+## What It Covers
 
-- Make a radio button
-- Get radio button value in state
-- Default selection of radio button
-- Make dropdown
-- Get dropdown value in state
-- Default selection in dropdown
+- Make a radio button group
+- Track selected radio button value with state
+- Set default selected radio button
+- Create a dropdown list
+- Track dropdown selection with state
+- Set default selected dropdown option
 
-## Features
-
-### 1. Handle Radio Button (Gender Selection)
+## Radio Button: Gender Selection
 
 - Uses `useState` to store the selected gender.
-- Updates gender based on the selected radio button.
-- Uses the `checked` attribute to bind selection to state.
+- Controlled using `checked={gender === "value"}`.
+- Updates the gender state via `onChange`.
 
-### 2. Handle Dropdown (City Selection)
+```jsx
+const [gender, setGender] = useState("female");
 
-- Uses `useState` to store the selected city.
-- Dropdown value is updated using `onChange` handler.
-- Initially defaults to `"Kathmandu"`.
+<input
+  type="radio"
+  name="gender"
+  value="male"
+  checked={gender === "male"}
+  onChange={(e) => setGender(e.target.value)}
+/>
+<label>Male</label>
 
-## example code: Handle Radio Button and Dropdown in React file: HandleRadioButtonAndDropdown.jsx
+<input
+  type="radio"
+  name="gender"
+  value="female"
+  checked={gender === "female"}
+  onChange={(e) => setGender(e.target.value)}
+/>
+<label>Female</label>
+
+```
+
+### Dropdown: City Selection
+
+- Uses useState to track selected city.
+- Sets the initial city to Kathmandu using useState("Kathmandu").
+- Uses value and onChange to make the dropdown controlled.
+
+```jsx
+const [city, setCity] = useState("Kathmandu");
+
+<select value={city} onChange={(e) => setCity(e.target.value)}>
+  <option value="Kathmandu">Kathmandu</option>
+  <option value="Biratnagar">Biratnagar</option>
+  <option value="Pokhara">Pokhara</option>
+  <option value="Lalitpur">Lalitpur</option>
+  <option value="Bhaktapur">Bhaktapur</option>
+</select>;
+```
+
+## filename: HandleRadioButtonAndDropdown.jsx
 
 ---
 
-# Looping with `map()` Function in React
+## Looping with `map()` Function in React
 
 This example demonstrates how to use JavaScript arrays and React's `map()` function to dynamically render content such as a table.
 
----
-
-## What is Covered
+## What is Covered?
 
 - What is an array?
 - How to define an array in React?
 - How to create a static HTML table
 - How to use the `map()` function for looping and rendering elements in JSX
 
----
-
 ## What is an Array?
 
 An array is a collection of items stored in a single variable. In JavaScript and React, arrays are commonly used to store lists of data.
-
-Example:
 
 ```js
 const fruits = ["Apple", "Banana", "Cherry", "Date"];
@@ -761,7 +861,7 @@ const fruits = ["Apple", "Banana", "Cherry", "Date"];
 
 ### What is an Array of Objects?
 
-An array of objects is a list where each element is an object, and each object can hold multiple key-value pairs.
+An array of objects is a list where each item is an object containing multiple key-value pairs.
 
 ```jsx
 const fruitsData = [
@@ -773,15 +873,46 @@ const fruitsData = [
 ];
 ```
 
-### example code: Looping with `map()` Function in React file: LoopingWithMapFunction.jsx
+### Static HTML Table Example
+
+```jsx
+
+<table>
+  <tr>
+    <td>1</td>
+    <td>Apple</td>
+    <td>Red</td>
+    <td>120</td>
+  </tr>
+  <!-- more rows -->
+</table>
+
+```
+
+### Dynamic Table Using .map()
+
+To dynamically render table rows:
+
+```jsx
+{
+  fruitsData.map((fruit) => (
+    <tr key={fruit.id}>
+      <td>{fruit.id}</td>
+      <td>{fruit.name}</td>
+      <td>{fruit.color}</td>
+      <td>{fruit.price}</td>
+    </tr>
+  ));
+}
+```
+
+### Example Code: LoopingWithMapFunction.jsx
 
 ---
 
-# Looping Through Components with Props in React
+## Looping Through Components with Props in React
 
 This example demonstrates how to dynamically render multiple React components using an array of user data. It covers best practices like reusable components, looping with `.map()`, passing props, and adding inline styles.
-
----
 
 ## What is Covered?
 
@@ -791,17 +922,17 @@ This example demonstrates how to dynamically render multiple React components us
 - Pass data as props from parent to child
 - Apply inline styling for each component
 
----
-
 ## Key Concepts
 
-### Component-Based Structure
+### 1. Component-Based Structure
 
-React is built around reusable components. Here, we use a `LoopComponentUser` component to display individual user information.
+React is built around reusable components. Here, we create a child component named `LoopComponentUser` to display each user's details.
 
-### Array of Objects
+---
 
-An array of objects is used to store user data, where each object contains:
+### 2. Array of Objects
+
+Data is stored in an array where each item is an object:
 
 ```js
 {
@@ -810,92 +941,199 @@ An array of objects is used to store user data, where each object contains:
   Age: 23,
   email: "ram@example.com"
 }
-
 ```
 
-### The .map() Method
+### 3. Looping with .map()
 
-The .map() function is used to loop through the array and render each user in its own LoopComponentUser component.
+To display all users, we use the .map() function and pass each user as a prop to LoopComponentUser.
 
-### example code : LooopComponent.jsx
+### example code : LoopComponent.jsx
 
----
+```jsx
+function LoopComponentUser({ user }) {
+  return (
+    <div
+      style={{
+        padding: "10px",
+        border: "1px solid",
+        margin: "10px",
+        width: "400px",
+        borderRadius: "10px",
+      }}
+    >
+      <p>
+        <strong>Id: </strong>
+        {user.Id}
+      </p>
+      <p>
+        <strong>Name: </strong>
+        {user.UserName}
+      </p>
+      <p>
+        <strong>Age: </strong>
+        {user.Age}
+      </p>
+      <p>
+        <strong>Email: </strong>
+        {user.email}
+      </p>
+    </div>
+  );
+}
 
-### Nested Looping in React
+export default LoopComponentUser;
+```
 
-In this example, we have a nested loop using the `.map()` function. The outer loop iterates over an array of user data, and the inner loop loops through the user's friends array.
+### filr loop and render users: file: LoopComponent.jsx
+
+```jsx
+import LoopComponentUser from "./LoopComponentUser";
+
+function LoopComponent() {
+  const Users = [
+    { Id: 1, UserName: "Ram", Age: 23, email: "ram@example.com" },
+    { Id: 2, UserName: "Teena", Age: 23, email: "teena@example.com" },
+    { Id: 3, UserName: "Rahul", Age: 23, email: "rahul@example.com" },
+    { Id: 4, UserName: "Muna", Age: 23, email: "muna@example.com" },
+    { Id: 5, UserName: "Ranjan", Age: 23, email: "ranjan@example.com" },
+  ];
+
+  return (
+    <div>
+      {Users.map((user) => (
+        <div key={user.Id}>
+          <LoopComponentUser user={user} />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default LoopComponent;
+```
+
+## Nested Looping in React
+
+In this example, we demonstrate how to perform **nested looping** using the `.map()` function in React. This is useful when you have hierarchical or nested data such as a list of schools and their respective students.
 
 ## What is Covered?
 
 - Understand array of objects with nested arrays
 - Implement **outer loop** to display parent data (Schools)
 - Implement **inner loop** to display child data (Students)
-- Create reusable **component for outer loop** (School)
-- Create reusable **component for inner loop** (Student within School)
+- Create reusable **component for outer loop** (`SchoolData`)
+- Create reusable **component for inner loop** (Students inside `SchoolData`)
 - Use `.map()` for nested structures
 - Apply basic inline styling
 
-## This is a foundational pattern when working with real-world data such as:
+## Real-World Use Cases
+
+This pattern is very useful in situations like:
 
 - Schools and Students
 - Departments and Employees
 - Categories and Products
 
-## Example Code : NestedLoopMap.jsx, SchoolData.jsx,
+### 1. Array of Objects with Nested Array
+
+```jsx
+const SchoolDetails = [
+  {
+    SclId: 101,
+    SclName: "JMC",
+    SclCity: "kathmandu",
+    studentData: [
+      { studId: 1001, studName: "sachin", Grade: 10 },
+      { studId: 1002, studName: "deepti", Grade: 6 },
+    ],
+  },
+  // More schools...
+];
+```
+
+### 2. Outer .map() – Looping Schools
+
+```jsx
+{
+  SchoolDetails.map((school) => (
+    <div key={school.SclId}>
+      <SchoolData SchoolDetails={school} />
+    </div>
+  ));
+}
+```
+
+### 3. Receiving Props in Child Component
+
+```jsx
+function SchoolData({ SchoolDetails }) {
+  // use SchoolDetails inside here
+}
+```
+
+### 4. Inner .map() – Looping Students
+
+```jsx
+{
+  SchoolDetails.studentData.map((student) => (
+    <div key={student.studId}>
+      <p>{student.studName}</p>
+      <p>{student.Grade}</p>
+    </div>
+  ));
+}
+```
+
+## full code : NestedLoopMap.jsx , SchoolData.jsx
 
 ---
 
-## hooks
+## React Hooks & useEffect
 
-### what is hooks?
+## what are hooks?
 
 In old version of React i.e older than 16 where developers use call components. IN new versions mostly functional component is use. so to archeive state, life cycle, other features in functional component. we use hooks.
 
-### Popular react hooks
+## Why Use Hooks?
 
-| Hook Name           | Purpose                                     |
-| ------------------- | ------------------------------------------- |
-| `useState()`        | Add local state to a function component     |
-| `useEffect()`       | Perform side-effects (API calls, timers)    |
-| `useContext()`      | Access context data (global/shared state)   |
-| `useRef()`          | Access DOM elements or store mutable value  |
-| `useReducer()`      | Alternative to `useState` for complex state |
-| `useMemo()`         | Optimize performance (memoize values)       |
-| `useCallback()`     | Optimize performance (memoize functions)    |
-| `useLayoutEffect()` | Like `useEffect` but fires earlier          |
+Hooks solve common problems like:
+
+- Reusing **stateful logic** without HOCs or render props
+- Reducing component **boilerplate**
+- Eliminating confusion with `this` in class components
+- Writing **cleaner**, more **readable**, and **modular** code
 
 ---
 
-### Why Use Hooks?
+## Popular React Hooks
 
-React Hooks were introduced to:
-
-- Use **stateful logic** in functional components.
-- Reuse logic between components via **custom hooks**.
-- Write **cleaner, smaller, and more readable** code.
-- Avoid confusion between `this`, binding methods, and lifecycle methods in classes.
-- Eliminate the need to convert function components into classes just to use state or lifecycle methods.
+| Hook                | Purpose                                           |
+| ------------------- | ------------------------------------------------- |
+| `useState()`        | Add local state to a component                    |
+| `useEffect()`       | Handle side-effects like API calls, subscriptions |
+| `useContext()`      | Access global/shared data                         |
+| `useRef()`          | Access DOM or store mutable values                |
+| `useReducer()`      | Manage complex state logic                        |
+| `useMemo()`         | Cache computed values                             |
+| `useCallback()`     | Cache function references                         |
+| `useLayoutEffect()` | Like `useEffect`, but fires **before** painting   |
 
 ---
 
 ## History of Hooks
 
-- **Released:** React v16.8 (February 2019)
-- Motivation: React team wanted to solve common problems in class components:
-- Complex component logic
-- Component reusability
-- Wrapper hell (Higher-order components, render props)
-- Confusing lifecycle methods
+- **Introduced in:** React v16.8 (Feb 2019)
+- **Goal:** Simplify reuse of stateful logic & lifecycle behavior in functional components.
 
 ---
 
 ## What is a Side Effect?
 
-In React, a **side effect** is any action that:
+In React, a **side-effect** is any operation that:
 
-- **Interacts with the outside world** (e.g., API requests, event listeners)
-- **Modifies things outside the component function** (e.g., browser DOM, local storage)
-- **Depends on external data** (e.g., props or global state)
+- Interacts with **outside systems** (e.g., API calls, DOM, timers)
+- **Updates non-local state** (like global variables or browser storage)
+- **Changes something outside React's control**
 
 ---
 
@@ -908,21 +1146,13 @@ You can easily identify a hook by the following:
   useState, useEffect, useContext, useCustomHook;
   ```
 
----
+## Why useEffect?
 
-## Why `useEffect`?
+The useEffect() hook:
 
-- Remove side-effects **from inside component logic** (like state updates)
-- Handle side-effects **from props**
-- Perform **data fetching**
-- Acts as a **lifecycle method replacement**
-- Use for **DOM manipulation**
-- Cleanup subscriptions or timeouts
-- Prevent **unwanted re-renders**
-
----
-
-## useEffect state
+- Replaces componentDidMount, componentDidUpdate, and componentWillUnmount
+- Used for data fetching, event listeners, timers, subscriptions, etc.
+- Optionally cleans up with a return function
 
 ## What It Covers
 
@@ -933,13 +1163,48 @@ You can easily identify a hook by the following:
 - Adding multiple pieces of state (`counter` and `data`)
 - Updating different states with buttons
 
+## 1. Declaring State
+
+```jsx
+const [counter, setCounter] = useState(0);
+const [data, setData] = useState(0);
+```
+
+## 2. Updating State
+
+```jsx
+function updateCounter() {
+  setCounter(counter + 1);
+}
+
+function updateData() {
+  setData(data + 1);
+}
+```
+
+## 3.Using useEffect With Dependencies
+
+```jsx
+useEffect(() => {
+  console.log("counter updated:", counter);
+}, [counter]); // Runs only when `counter` changes
+```
+
+## 4. 4. Side-effect on Every Render (⚠️ Not Recommended)
+
+```jsx
+useEffect(() => {
+  console.log("Runs after every render");
+});
+```
+
 ### example code: UseEffectDemo.jsx
 
-## Handle side-effects **from props**
+---
+
+## Handle Side-Effects **From Props**
 
 This example demonstrates how to **handle side effects caused by props** using React's `useEffect` hook.
-
----
 
 ### What It Covers
 
@@ -949,15 +1214,39 @@ This example demonstrates how to **handle side effects caused by props** using R
 - How to use the **dependency array** to control when effects run
 - Understanding **which effect triggers on which prop update**
 
-### example code: PropsEffectDemo.jsx , PropsEffectHandler.jsx
+---
+
+## 1. useEffect with empty dependency array:
+
+```jsx
+useEffect(() => {
+  getCounter();
+}, []); // runs only once on mount
+```
+
+## 2. useEffect watching only data prop:
+
+```jsx
+useEffect(() => {
+  dataFunction();
+}, [data]); // runs only when `data` prop changes
+```
+
+## 3. useEffect watching data and count props:
+
+```jsx
+useEffect(() => {
+  sayHi();
+}, [data, count]); // runs when either `data` or `count` changes
+```
+
+## file example code: PropsEffectDemo.jsx , PropsEffectHandler.jsx
 
 ---
 
 ## What is Component Life Cycle?
 
 A **component life cycle** refers to the different stages a React component goes through from the moment it's created until it is removed from the DOM.
-
----
 
 ## Life Cycle Linked to Human Life
 
@@ -968,8 +1257,6 @@ A **component life cycle** refers to the different stages a React component goes
 | Dies              | Unmounting (Component is removed) |
 
 Just like humans have predictable stages of life, React components follow these stages during their existence in the UI.
-
----
 
 ## Phases of Component Life Cycle
 
@@ -984,12 +1271,37 @@ Just like humans have predictable stages of life, React components follow these 
    - `useEffect(() => {}, [dependency])` runs when dependency updates.
 
 3. **Unmounting**
+
    - Component is removed from the UI.
    - Cleanup function inside `useEffect` runs.
 
----
+## 1. Mounting phase: run once
 
-### code example at: LifeCycleDemoHandle.jsx, LifeCycleDemo.jsx
+```jsx
+useEffect(() => {
+  getCount();
+}, []);
+```
+
+## 2. Updating phase: run when data changes
+
+```jsx
+useEffect(() => {
+  dataFunction();
+}, [data]);
+```
+
+## 3. Unmounting phase: cleanup
+
+```jsx
+useEffect(() => {
+  return () => {
+    console.log("unmount phase");
+  };
+}, []);
+```
+
+### Example Code: `LifeCycleDemo.jsx` , `LifeCycleDemoHandle.jsx`
 
 ---
 
@@ -997,48 +1309,35 @@ Just like humans have predictable stages of life, React components follow these 
 
 React provides **multiple ways** to apply styles to components. Each method has its use case depending on the size, structure, and complexity of your application.
 
----
-
 ## Types of Styling in React.js
 
-- inline
-- external
-- css modules
-- styled components
-- external css library/ framework
-
----
+- Inline Styling
+- External CSS File
+- CSS Modules
+- Styled Components (via `styled-components` library)
+- External CSS Library / Framework (e.g., Bootstrap, Tailwind)
 
 ## Inline CSS
 
-- Defined directly in the component using the `style` attribute.
-- Uses camelCase for CSS properties.
-- Best for **small, dynamic styles**.
+- Defined directly inside components using the `style` attribute.
+- Uses **JavaScript object syntax** instead of regular CSS strings.
+- Property names use **camelCase**, not kebab-case.
+- Best for **quick, dynamic, component-scoped styling**.
 
-## What It Covers
+## How React Inline CSS is Different from HTML Inline Style?
 
-- How React inline CSS is different from regular HTML style attributes.
-- Using JavaScript **object syntax** to define styles.
-- Creating a simple **User Profile Card layout** using inline CSS.
-- Writing inline CSS in a file named: `InlineCssDemo.jsx`.
-- Reusing inline styles and making **multiple profile cards**.
-
----
-
-## How React Inline CSS is Different from Regular HTML Style?
-
-| Feature               | React Inline CSS              | Regular HTML Inline Style       |
+| Feature               | React Inline CSS              | HTML Inline Style               |
 | --------------------- | ----------------------------- | ------------------------------- |
 | Syntax                | JavaScript Object             | String                          |
 | Property Naming       | camelCase (`backgroundColor`) | kebab-case (`background-color`) |
 | Dynamic Value Support | Yes                           | No                              |
 | Media Query Support   | No                            | No                              |
 
----
+## Example Code: `InlineCssDemo.jsx`
 
-## Example: User Profile Cards with Inline CSS
-
-### File: `InlineCssDemo.jsx`
+```jsx
+<h2 style={{ color: "red", textAlign: "center" }}>InlineCssDemo</h2>
+```
 
 ---
 
@@ -1136,39 +1435,72 @@ Apply the styles using the `className` attribute in JSX:
 - Reusable across components
 - Helps follow best practices and separation of concerns
 
+## file name :ExternalCSSDemo.jsx
+
 ---
+
+# CSS Modules in React
 
 ## What is CSS Module?
 
-CSS Modules is a styling approach in React that allows you to write CSS that's scoped locally to the component, rather than globally. This prevents style conflicts across components and helps manage large codebases more efficiently.
+CSS Modules is a styling approach in React that allows you to write CSS that's scoped **locally to the component**, rather than globally. This prevents style conflicts across components and helps manage large codebases more efficiently.
+
+---
 
 ## Why We Need CSS Modules
 
 In large applications, global CSS class names can easily conflict. CSS Modules help by **scoping styles locally to the component**. This ensures styles don’t clash or leak across components.
 
-### Create a CSS Module File
+## Benefits
 
-A CSS Module file must end with `.module.css`.
+- Locally scoped styles (no class name collisions)
+- Cleaner and modular codebase
+- Easier maintenance in large projects
 
-**Example: `user.module.css`**
+## How to Use CSS Modules
 
-### Import CSS Module in a Component
+### 1. Create a CSS Module File
+
+A CSS Module file **must end with `.module.css`**
+`cssModuleDemo.module.css`
+
+```css
+.heading {
+  color: green;
+}
+
+.img {
+  width: 350px;
+}
+
+...
+```
+
+### 2. Import the CSS Module in Component
 
 ```jsx
 import style from "./CSS/cssModuleDemo.module.css";
 
-<div className={style.mainCard}></div>;
+function CssModuleDemo() {
+  return (
+    <div>
+      <div className={style.mainCard}>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbFy8dYBao7j3VKvPdgSEvn1Vly2z_02kBbQ&s"
+          alt="cherry tree"
+          className={style.img}
+        />
+
+        <div className={style.textDiv}>
+          <h4 className={style.heading}>Cherry Tree</h4>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default CssModuleDemo;
 ```
-
-### Apply Styles in Component
-
-```jsx
-<div className={style.mainCard}>
-  <img src="..." className={style.img} />
-</div>
-```
-
-### example code : CssModuleDemo.jsx
 
 ---
 
@@ -1240,105 +1572,174 @@ To confirm the installation, check `package.json` for an entry like:
 
 ### What is Bootstrap?
 
-Bootstrap is a popular open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS- and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.
+Bootstrap is a popular **open-source CSS framework** for building responsive and mobile-first websites. It includes design templates for typography, forms, buttons, navigation, and other UI components using both CSS and JavaScript.
 
-## What it Covers
+## Why Use Bootstrap in React?
+
+- Pre-built UI components
+- Responsive and mobile-first
+- Clean design with minimal effort
+- Easy customization using classNames or variant props
+
+### What This Covers
 
 - What is Bootstrap
-- How to install Bootstrap
-- How to import and use Bootstrap in React
-- Bootstrap component examples: Button, Alert, Navbar
+- How to install Bootstrap and React-Bootstrap
+- How to import Bootstrap into your React app
+- Using Bootstrap UI components: Button, Alert, Navbar
 
-## How to Install Bootstrap
+### How to Install Bootstrap in React
 
-To install Bootstrap and React-Bootstrap in a React project, use the following commands:
+Use the following command in your terminal to install both **Bootstrap** and **React-Bootstrap**:
 
-- **npm install react-bootstrap bootstrap**
-- Then confirm installation in `package.json`.
+```bash
+npm install react-bootstrap bootstrap
+```
 
-## How to Import Bootstrap in React
+After installation, confirm the presence of both packages in your package.json.
 
-To use Bootstrap globally in your app, import Bootstrap’s CSS file in `main.jsx` or `index.js`:
+### How to Import Bootstrap CSS
 
-```js
+Import the Bootstrap stylesheet in your main entry file (e.g., main.jsx or index.js) for global styles:
+
+```jsx
 import "bootstrap/dist/css/bootstrap.min.css";
 ```
 
+This line ensures Bootstrap styles are available throughout your app.
+
+## Bootstrap Component Example :BootstrapDemo.jsx
+
+---
+
 ## What is useRef?
 
-- `useRef` is a **React Hook** that allows you to directly access and interact with a DOM element.
-- Unlike state, changing a `ref` value **does not cause re-render**.
+`useRef` is a **React Hook** that provides a way to reference **DOM elements** or **persist values** across renders **without triggering re-renders**. Commonly used to directly interact with DOM elements or to store mutable values.
 
-## What it Covers
+## What It Covers
 
-- `useRef` helps manage **uncontrolled components**.
-- You can directly **focus, read, or modify** the DOM element without causing a re-render.
-- Useful for:
-
+- Managing **uncontrolled components**.
+- Directly **accessing DOM elements** (e.g., input fields).
+- Performing operations such as:
   - Setting focus
-  - Controlling media playback
-  - Animating elements
-  - Accessing previous state values (advanced)
+  - Modifying styles
+  - Toggling visibility
+- No component re-render occurs when the `ref` value changes.
 
-## Example Code: `UseRefDemo.jsx`
+## Step 1: Create a reference
 
----
+const inputRef = useRef(null);
 
-## Uncontrolled Component and useRef Demo
+## Step 2: Attach it to an element
 
-## What it Covers
+<input ref={inputRef} />
 
-### What is an Uncontrolled Component?
+## Step 3: Use it to manipulate the DOM directly
 
-An uncontrolled component is a form input that is handled by the DOM itself, rather than React. You typically access its value using a ref or by directly querying the DOM.
+inputRef.current.focus(); // focuses the input
+inputRef.current.style.color = "green"; // changes text color
+inputRef.current.style.display = "none"; // hides the input
+inputRef.current.style.display = "inline"; // shows the input
 
-### Using `querySelector`
-
-This approach uses standard DOM methods to access the input field values.
-
-### Using `useRef`
-
-This approach leverages React's `useRef` hook to directly access DOM elements and their current values.
-
-## example code: Uncontrolled.jsx;
+## fileName: UseRefDemo.jsx
 
 ---
 
-## Passing Function as Props in React
+## Uncontrolled Component and `useRef` Demo
 
-### What It Covers
+This section demonstrates how to handle forms in React without using `useState`. It covers both the traditional DOM-based approach and the modern React `useRef` method.
+
+## What It Covers
+
+- What is an Uncontrolled Component?
+- Using `document.querySelector` to access input values
+- Using `useRef` to access and control DOM elements
+- Preventing unnecessary re-renders while accessing form data
+
+## What is an Uncontrolled Component?
+
+An **uncontrolled component** in React is a form element (like `<input>`, `<textarea>`, etc.) where the value is not controlled by React state. Instead, you **let the browser handle it**, and you access its value when needed, typically on form submission.
+
+Instead of managing value with `useState`, you use:
+
+- DOM methods like `document.querySelector`
+- React's `useRef` hook
+
+## Why Use useRef Instead of State?
+
+- useRef does not trigger re-render when updated.
+- Great for direct DOM manipulation like focusing inputs, getting values, or animations.
+- Ideal for simple forms where managing state isn't necessary.
+
+```js
+// Accessing values using document.querySelector (DOM-based)
+const user = document.querySelector("#name").value;
+const password = document.querySelector("#password").value;
+
+// Accessing values using useRef (React-based)
+const user = userRef.current.value;
+const password = passwordRef.current.value;
+```
+
+## Full Example Code – Uncontrolled.jsx
+
+---
+
+# Passing Function as Props in React
+
+## What It Covers
 
 - What is **passing function as props** in React?
 - Why do we need to pass function as props?
-- How to make **parent and child components**
-- How to **call parent function from child** using props
+- How to create **parent and child components**
+- How to **call a parent function from a child** using props
 
 ## Explanation
 
-In React, **functions can be passed as props** from a parent component to a child component. This technique is used when the child needs to communicate back to the parent or trigger some logic defined in the parent.
+In React, **functions can be passed as props** from a parent component to a child component. This allows the child component to communicate or trigger behavior in the parent component. It's a common pattern to handle events or data flow from children back to the parent.
 
-## Parent Component Example
+## Important Code Chunk
 
-**File: `functionProps.jsx`**
+### Parent Logic
 
-## Child Component Example
+```js
+const displayName = (name) => {
+  alert(name);
+};
 
-**File: `FunctionPropsUser.jsx`**
+const getFunction = () => {
+  alert("function user called");
+};
 
-## Output
+<FunctionPropsUser
+  displayName={displayName}
+  name="aa"
+  getFunction={getFunction}
+/>;
+```
 
-- When you click the **User Display!!** button, it triggers `displayName(name)` in the parent.
-- When you click **get function**, it runs `getFunction()` from the parent.
+- displayName and getFunction are declared in the parent.
+- Passed as props to the child component.
 
----
+### Child Logic
 
-# React `forwardRef`
+```jsx
+function FunctionPropsUser({ displayName, name, getFunction }) {
+  return (
+    <>
+      <button onClick={() => displayName(name)}>User Display!!</button>
+      <button onClick={getFunction}>get function</button>
+    </>
+  );
+}
+```
 
-## What it Covers
+- Props are destructured and executed directly in the child on button click.
+- The child calls the parent-defined functions with or without arguments.
 
-- What is `forwardRef`?
-- How to implement `forwardRef` before React version 19.
-- How to implement `forwardRef` in React version 19 and above.
+## Parent Component Example : File: functionProps.jsx
+
+## Child Component Example : File: FunctionPropsUser.jsx
 
 ---
 
@@ -1393,27 +1794,57 @@ export default forwardRef(ForwardRefUser);
 
 ## With React 19 and above (no need to use `forwardRef`)
 
-### `ForwardRefUser.jsx` (React 19+)
-
----
+### example code : file: `ForwardRefUser.jsx` (React 19+)
 
 ## useFormStatus and useFormState in React
 
-## What it covers
+### What It Covers
 
 - What is `useFormStatus`?
-- Example code using `useFormStatus`
-- Make a form using `<form>` tag
-- Handle form submission with `action`
-- Show status during form submission (like a loader or disable button)
-
-## what is `useFormStatus`
-
-`useFormStatus` is a React hook provided by **react-dom** that helps track the pending state of a form submission.You can use it to show loading indicators, disable buttons, or give feedback while the form is submitting.`useFormStatus` is useful in forms that need loading or state indication.IT is ideal for **Submit** button status control.
+- How to use it to control form submission UI
+- Full working example with custom form and async action
+- When and why to use it in modern React
 
 ---
 
-# example Code: UseFormStatusHookDemo.jsx
+### What is `useFormStatus`?
+
+- `useFormStatus` is a **React hook from `react-dom`** (React 18+), used inside a **form context** to check if a form submission is in progress (`pending`).
+- It helps in:
+
+  - Disabling submit buttons while the form is submitting
+  - Showing loading indicators
+  - Preventing duplicate submissions
+
+  **Note**: This is especially useful in server actions or client-side transitions in frameworks like Next.js / React Router with React 18+.
+
+---
+
+### Example Use Case
+
+- A login or registration form where you want to **disable the submit button** and show **"Submitting..."** while the data is being processed.
+
+---
+
+## 1.
+
+### `useFormStatus` Usage
+
+```jsx
+const { pending } = useFormStatus();
+```
+
+This line extracts the pending state that becomes true while the form is submitting.
+
+## 2. Button with Submission Feedback
+
+```jsx
+<button disabled={pending}>{pending ? "Submitting..." : "Submit"}</button>
+```
+
+This button changes its label and gets disabled during submission to prevent double-clicks or multiple submissions.
+
+## Full Code Example : File: UseFormStatusHookDemo.jsx
 
 ---
 
@@ -1422,83 +1853,204 @@ export default forwardRef(ForwardRefUser);
 ## What it Covers
 
 - What is `useTransition`?
-- How to use `useTransition` with an example
-- Create buttons with async logic using both `useState` and `useTransition`
+- Why and when to use it
+- Full example using both `useState` and `useTransition`
+- Comparison between state and transition-based updates
+
+---
 
 ## What is `useTransition`?
 
-The `useTransition` hook is used to mark state updates as non-urgent. This can be useful for keeping the app responsive when rendering large UI trees.
+`useTransition` is a React hook introduced in React 18 that helps you mark certain UI updates as **non-urgent** or **low priority**.
 
-## example code: UseTransitionDemo.jsx
+🔹 Example use cases:
 
-## exaination of code
+- Rendering a large list or table
+- Performing async updates like filtering or searching
+- Preventing UI blocking during expensive re-renders
 
-- `useState` is used for normal state management and can cause blocking behavior during updates.
-- `useTransition` helps prioritize urgent updates and keeps less important tasks in the background.
-
----
-
-## Derived State in React JS
-
-### What is Derived State?
-
-Derived state refers to values in your component that are **calculated based on other state or props**, rather than stored as their own state.
-
-- Avoids unnecessary state duplication.
-- Improves performance and simplifies state management.
-- Typically represented as **variables/constants** within the component.
-
-### Why Use Derived State?
-
-- Prevents storing data that can be calculated from existing state.
-- Helps avoid bugs from keeping multiple pieces of state in sync.
-- Reduces re-renders and boosts performance.
-
-## Demo code file: DerivedDemo.jsx
+With `useTransition`, React can keep the UI **responsive** by deferring non-critical updates and showing pending indicators.
 
 ---
 
-## Lifting Up State in React JS
+## Difference Between `useState` and `useTransition`
 
-### What it covers
+| Feature            | `useState`                 | `useTransition`          |
+| ------------------ | -------------------------- | ------------------------ |
+| Type of update     | Urgent / blocking          | Non-urgent / deferred    |
+| UI Responsiveness  | May block UI during update | Keeps UI responsive      |
+| Usage              | Immediate state change     | Schedule transition work |
+| Pending Indicator? | You manage manually        | Built-in support         |
 
-- What is lifting up state?
-- Creating 2 components
-- Sharing data between components
+---
+
+## Important
+
+### 1. Basic Syntax of `useTransition`
+
+```jsx
+const [isPending, startTransition] = useTransition();
+```
+
+### 2. Start Non-Urgent Update
+
+```jsx
+startTransition(() => {
+  // non-urgent logic here
+});
+```
+
+## Full Example Code: UseTransitionDemo.jsx
+
+---
+
+# Derived State in React JS
+
+## What it Covers
+
+- What is **Derived State**?
+- Why and when to use it
+- Benefits of avoiding unnecessary state duplication
+- Full demo using user list tracking
+
+---
+
+## What is Derived State?
+
+Derived state refers to **calculated values** that depend on other existing `state` or `props`. Instead of storing these values as new state variables, you compute them inside the component, often using `const`.
+
+**Do this**:
+
+```js
+const totalUsers = users.length;
+```
+
+## Avoid this:
+
+```jsx
+const [totalUsers, setTotalUsers] = useState(0); // This is redundant
+```
+
+### 1. Calculating Total Users
+
+```jsx
+const total = users.length;
+```
+
+### 2. Getting Last User
+
+```jsx
+const last = users[users.length - 1];
+```
+
+### 3. Counting Unique Users
+
+```jsx
+const unique = [...new Set(users)].length;
+```
+
+These are derived from the users array, and do not require separate useState.
+
+## Full Code Example : DerivedDemo.jsx
+
+---
+
+# Lifting Up State in React JS
+
+## What It Covers
+
+- What is **lifting up state** in React?
+- When and why to use it
+- Creating **multiple components** that share data
+- Complete working example with two child components
 
 ---
 
 ## What is Lifting Up State?
 
-Lifting state up means moving state from a child component to a common ancestor (usually the parent) to share data between multiple child components.
-Instead of both components maintaining their own version of state, the shared state lives in the parent and is passed down as props.
-This allows components to stay in sync.
+**Lifting state up** is the process of moving shared state from child components to their closest **common ancestor** (usually the parent component).  
+Instead of maintaining local state in each component, we manage state in the parent and **pass it down via props**.
 
-## Code Example
-
-### Parent Component: `LiftUpStateDemo.jsx`
-
-### Child Component 1:` LiftingUpAddUser.jsx`
-
-### Child Component 2: `LiftingUpDisplayUser.jsx`
+> This allows two or more child components to **communicate** and stay **in sync**.
 
 ---
 
-## React Concept: Updating Object in State
+## Why Lift State?
 
-## What it covers
+| Benefit              | Description                                       |
+| -------------------- | ------------------------------------------------- |
+| Shared data source   | Keeps components synced through a single source   |
+| Better control       | State logic is centralized in one component       |
+| Easier debugging     | Less confusion from scattered local states        |
+| React best practices | Aligns with the unidirectional data flow of React |
 
-- Updating object in state
-- Make object in state
-- Display object values
-- Update object keys
-- Update nested object keys
+---
 
-## updating state in state in react
+## Parent: LiftUpStateDemo.jsx
 
-In React, "updating object in state" means changing the values inside an object that is stored using useState.
+## Child 1: LiftingUpAddUser.jsx
 
-## example code : UpdatingObjInState.jsx
+## Child 2: LiftingUpDisplayUser.jsx
+
+---
+
+# React Concept: Updating Object in State
+
+## What It Covers
+
+- How to store an object in state using `useState`
+- How to **update individual object keys**
+- How to **update nested object values**
+- Best practices for **immutably updating** state
+
+---
+
+## What Does "Updating Object in State" Mean?
+
+In React, state must be **immutable**—meaning we never directly change it.  
+Instead, we **create a copy**, update it, and set the new version using `setState`.
+
+When the state is an **object**, we use:
+
+- The spread operator (`...`) to make shallow copies
+- Separate logic to update **nested objects**
+
+---
+
+### Top-level Object Update
+
+```jsx
+setData((prevData) => ({
+  ...prevData,
+  name: "new name", // Only name is updated
+}));
+```
+
+### Nested Object Update: `address.city`
+
+```jsx
+setData((prevData) => ({
+  ...prevData,
+  address: {
+    ...prevData.address,
+    city: "new city", // Only city is updated inside address
+  },
+}));
+```
+
+### Nested Object Update: `address.country`
+
+```jsx
+setData((prevData) => ({
+  ...prevData,
+  address: {
+    ...prevData.address,
+    country: "new country", //  Only country is updated
+  },
+}));
+```
+
+## Example Component: `UpdatingObjInState.jsx`
 
 ---
 
@@ -1563,31 +2115,58 @@ Again, you spread into a new array so React can detect the change.
 
 ---
 
-### useActionState Hook in React
+# useActionState Hook in React
 
-This example demonstrates how to use the `useActionState` hook in React to manage form submission and display response data or errors dynamically.
-
-### What it Covers
+## What It Covers
 
 - What is `useActionState`?
-- How to use it in a form
-- Handle asynchronous actions like form submission
-- Show pending state and results
+- How to use `useActionState` in a form component
+- Handle asynchronous form submission
+- Display loading state, success, and error messages dynamically
 
-## Why use `useActionState`?
+## What is `useActionState`?
 
-- It handles stateful logic within forms easily.
-- Manages async actions like form submission.
-- Cleaner than managing multiple state variables.
+`useActionState` is a React hook used to manage stateful asynchronous actions, such as form submissions. It helps to handle pending state, success responses, and errors in a clean and declarative way.
 
-## Output Behavior
+## Why Use `useActionState`?
 
-- Displays a form with fields for `name` and `password`.
-- When submitted:
-  - Shows "Submitting..." while waiting.
-  - Displays an error if fields are empty.
-  - Displays a success message and submitted data otherwise.
+- Simplifies managing async form submissions
+- Automatically handles loading/pending states
+- Provides a clean interface for displaying success and error feedback
+- Reduces boilerplate code compared to manual state management
 
-### example code : UseActionStateDemo.jsx
+## How It Works
 
----
+- You pass a function that performs the async action (e.g., submitting form data).
+- `useActionState` returns:
+
+  - `data`: the result or error returned by your action function
+  - `action`: a handler to be used as the form’s `action` prop
+  - `pending`: boolean that indicates if the action is in progress
+
+  ## 📦 Important Chunk of Code
+
+```jsx
+const handleSubmit = async (prevData, formData) => {
+  let name = formData.get("name");
+  let password = formData.get("password");
+
+  await new Promise((res) => setTimeout(res, 1000));
+
+  if (name && password) {
+    return { message: "data submitted successfully", name, password };
+  } else {
+    return { error: "Please fill all fields" };
+  }
+};
+
+const [data, action, pending] = useActionState(handleSubmit, undefined);
+
+<form action={action}>
+  <input type="text" name="name" />
+  <input type="password" name="password" />
+  <button disabled={pending}>{pending ? "Submitting..." : "Submit"}</button>
+</form>;
+```
+
+## Example Code: `UseActionStateDemo.jsx`
