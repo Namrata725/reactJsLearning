@@ -2332,3 +2332,90 @@ Managing boolean states like show/hide or on/off is a very common pattern in Rea
 | Set Boolean    | `if (typeof val !== "boolean") { ... } else { setValue(val); }` |
 | Conditional UI | `{value ? <h3>Custom Hook Demo</h3> : null}`                    |
 | Usage Pattern  | `<button onClick={() => toggleValue(true)}>Show</button>`       |
+
+---
+
+# 📚 React Context API Example
+
+## 🧠 What is Context API?
+
+The **Context API** in React allows you to **share data globally** across components, without passing props manually at every level.
+
+It is ideal for:
+
+- Passing down themes, authentication, language, user info, etc.
+- Avoiding "prop drilling" (passing data through many levels)
+
+---
+
+## ⚙️ How Does Context API Work?
+
+The Context API has 3 main parts:
+
+| Part              | Role                                                         |
+| ----------------- | ------------------------------------------------------------ |
+| `createContext()` | Initializes a new context                                    |
+| `Provider`        | Wraps components and **provides** data via `value` prop      |
+| `useContext()`    | A React hook to **consume** context data in child components |
+
+---
+
+## Steps to Use Context API in This Project
+
+### Components Used:
+
+- `MainComponent.jsx`
+- `CollageComponent.jsx`
+- `ClassComponent.jsx`
+- `Student.jsx`
+- `SubjectComponent.jsx`
+- `ContextData.jsx`
+
+---
+
+### Step-by-Step Breakdown
+
+#### Step 1: Create All Components
+
+- Basic React components like `MainComponent`, `Student`, etc.
+
+#### Step 2: Create Context
+
+```js
+// ContextData.jsx
+import { createContext } from "react";
+const SubjectContext = createContext("maths"); // default value: "maths"
+export { SubjectContext };
+```
+
+#### Step 3: Use Provider in MainComponent
+
+```jsx
+// MainComponent.jsx
+import { SubjectContext } from "./ContextData";
+
+<SubjectContext.Provider value={subject}>
+  <CollageComponent />
+</SubjectContext.Provider>;
+```
+
+#### Use Context in Nested Components
+
+```jsx
+// SubjectComponent.jsx
+import { useContext } from "react";
+import { SubjectContext } from "./ContextData";
+
+const subject = useContext(SubjectContext);
+```
+
+## 🔍 Important Code Chunks
+
+| Pattern                     | Code Example                                                             |
+| --------------------------- | ------------------------------------------------------------------------ |
+| Create Context              | `const SubjectContext = createContext("maths");`                         |
+| Wrap with Provider          | `<SubjectContext.Provider value={subject}>...</SubjectContext.Provider>` |
+| Update Context Value        | `onChange={(e) => setSubject(e.target.value)}`                           |
+| Access Context (useContext) | `const subject = useContext(SubjectContext);`                            |
+| Reset Context               | `setSubject("")` to clear selection                                      |
+| Display Selected Value      | `<h3>Selected Subject: {subject}</h3>`                                   |

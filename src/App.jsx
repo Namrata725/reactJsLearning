@@ -39,6 +39,7 @@ import UseActionStateDemo from "./UseActionStateDemo";
 import UseIDDemo from "./UseIDDemo";
 import FragmentDemo from "./FragmentDemo";
 import CustomHook from "./CustomHook";
+import MainComponent from "./ContextAPI/MainComponent";
 function App() {
   return (
     <div>
@@ -99,7 +100,9 @@ function App() {
       {/* <UseActionStateDemo /> */}
       {/* <UseIDDemo /> */}
       {/* <FragmentDemo />; */}
-      <CustomHook />
+      {/* <CustomHook /> */}
+
+      <MainComponent />
     </div>
   );
 }
