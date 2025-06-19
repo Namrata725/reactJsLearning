@@ -40,6 +40,7 @@ import UseIDDemo from "./UseIDDemo";
 import FragmentDemo from "./FragmentDemo";
 import CustomHook from "./CustomHook";
 import MainComponent from "./ContextAPI/MainComponent";
+import RouteDemo from "./RouteDemo";
 function App() {
   return (
     <div>
@@ -102,7 +103,8 @@ function App() {
       {/* <FragmentDemo />; */}
       {/* <CustomHook /> */}
 
-      <MainComponent />
+      {/* <MainComponent /> */}
+      <RouteDemo />
     </div>
   );
 }

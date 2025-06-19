@@ -2335,9 +2335,9 @@ Managing boolean states like show/hide or on/off is a very common pattern in Rea
 
 ---
 
-# 📚 React Context API Example
+# React Context API Example
 
-## 🧠 What is Context API?
+## What is Context API?
 
 The **Context API** in React allows you to **share data globally** across components, without passing props manually at every level.
 
@@ -2419,3 +2419,54 @@ const subject = useContext(SubjectContext);
 | Access Context (useContext) | `const subject = useContext(SubjectContext);`                            |
 | Reset Context               | `setSubject("")` to clear selection                                      |
 | Display Selected Value      | `<h3>Selected Subject: {subject}</h3>`                                   |
+
+---
+
+## React Router v6.7+ Setup and Example
+
+### What is React Router?
+
+React Router is a standard library for routing in React. It enables navigation among views of various components in a React application, allows changing the browser URL, and keeps the UI in sync with the URL.
+
+---
+
+### Setup Instructions
+
+### 1. Install React Router
+
+Use the following command in your React project:
+
+```bash
+npm install react-router-dom
+
+```
+
+### 2. working with Router
+
+#### 1. Setup Router
+
+```jsx
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+```
+
+#### 2. Define Navigation Links
+
+```jsx
+<Link to="/about">About</Link>
+```
+
+#### 3. Setup Routes
+
+```jsx
+<Route path="/about" element={<h2>About</h2>} />
+```
+
+#### 4. Bootstrap Navigation Buttons
+
+```jsx
+<Button as={Link} to="/about">
+  About
+</Button>
+```
+
+---
