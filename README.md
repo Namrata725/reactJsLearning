@@ -2470,3 +2470,72 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 ```
 
 ---
+
+## 🔗 What is `BrowserRouter`?
+
+`BrowserRouter` is a component from the `react-router-dom` library that enables routing in a React application using the **HTML5 History API**.
+
+### ✅ Purpose:
+
+- It wraps your entire app.
+- Enables clean URLs like `/about`, `/contact`.
+- Reactively renders components based on the current URL.
+- Updates browser history without full page reloads.
+
+### 🛠 Example:
+
+```jsx
+import { BrowserRouter } from "react-router-dom";
+
+<BrowserRouter>{/* other routing components here */}</BrowserRouter>;
+```
+
+## What is Routes?
+
+Routes is a container component for defining multiple routes. It replaces the older Switch component from React Router v5.
+
+### ✅ Purpose:
+
+- It maps the current URL to one of the child Route components.
+- Only one matching Route is rendered at a time.
+
+### 🛠 Example:
+
+```jsx
+import { Routes, Route } from "react-router-dom";
+
+<Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="/about" element={<About />} />
+</Routes>;
+```
+
+## What is Route?
+
+Route defines a path and the component to render when the browser's URL matches that path.
+
+- path: the URL to match (e.g., /about)
+- element: the React component to render for that route
+
+### 🛠 Example:
+
+```jsx
+<Route path="/contact" element={<Contact />} />
+```
+
+### What is Link?
+
+**Link** is a React component used to navigate to different routes without reloading the page.
+
+### Purpose
+
+- Replaces traditional <a> tags.
+- Works with BrowserRouter to perform SPA navigation.
+
+```jsx
+import { Link } from "react-router-dom";
+
+<Link to="/about">About Us</Link>;
+```
+
+---
