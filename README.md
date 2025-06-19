@@ -2325,10 +2325,10 @@ Managing boolean states like show/hide or on/off is a very common pattern in Rea
 
 ---
 
-| Declare Hook | `const [value, toggleValue] = useToggleHook(true);` |
-| Toggle Logic | `setValue(!value);` |
-| Set Boolean | `if (typeof val !== "boolean") { ... } else { setValue(val); }` |
-| Conditional UI | `{value ? <h3>Custom Hook Demo</h3> : null}` |
-| Usage Pattern | `<button onClick={() => toggleValue(true)}>Show</button>` |
-
----
+| **Feature**    | **Code Snippet**                                                |
+| -------------- | --------------------------------------------------------------- |
+| Declare Hook   | `const [value, toggleValue] = useToggleHook(true);`             |
+| Toggle Logic   | `setValue(!value);`                                             |
+| Set Boolean    | `if (typeof val !== "boolean") { ... } else { setValue(val); }` |
+| Conditional UI | `{value ? <h3>Custom Hook Demo</h3> : null}`                    |
+| Usage Pattern  | `<button onClick={() => toggleValue(true)}>Show</button>`       |
