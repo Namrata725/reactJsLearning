@@ -2471,18 +2471,18 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ---
 
-## 🔗 What is `BrowserRouter`?
+## What is `BrowserRouter`?
 
 `BrowserRouter` is a component from the `react-router-dom` library that enables routing in a React application using the **HTML5 History API**.
 
-### ✅ Purpose:
+### Purpose:
 
 - It wraps your entire app.
 - Enables clean URLs like `/about`, `/contact`.
 - Reactively renders components based on the current URL.
 - Updates browser history without full page reloads.
 
-### 🛠 Example:
+### Example:
 
 ```jsx
 import { BrowserRouter } from "react-router-dom";
@@ -2494,12 +2494,12 @@ import { BrowserRouter } from "react-router-dom";
 
 Routes is a container component for defining multiple routes. It replaces the older Switch component from React Router v5.
 
-### ✅ Purpose:
+### Purpose:
 
 - It maps the current URL to one of the child Route components.
 - Only one matching Route is rendered at a time.
 
-### 🛠 Example:
+### Example:
 
 ```jsx
 import { Routes, Route } from "react-router-dom";
@@ -2517,7 +2517,7 @@ Route defines a path and the component to render when the browser's URL matches 
 - path: the URL to match (e.g., /about)
 - element: the React component to render for that route
 
-### 🛠 Example:
+### Example:
 
 ```jsx
 <Route path="/contact" element={<Contact />} />
