@@ -26,6 +26,11 @@ function Header() {
               Login
             </Link>
           </li>
+          <li>
+            <Link to="/collage" className="link">
+              Collage
+            </Link>
+          </li>
         </ul>
       </div>
     </div>

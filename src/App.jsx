@@ -110,7 +110,9 @@ function App() {
 
       {/* <MainRouter /> */}
 
-      <MainPageNotFound />
+      {/* <MainPageNotFound /> */}
+
+      <MainRouter />
     </div>
   );
 }

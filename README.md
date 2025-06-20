@@ -2701,3 +2701,137 @@ If you want to redirect to the Home page instead of showing the 404 page:
 ```
 
 ## demo code file :: PageNotfound/ MainPageNotFound.jsx & PageNotfound/ PageNotFound.jsx
+
+---
+
+## Nested Navigation with React Router
+
+This project demonstrates how to build **nested routes** using React Router v6+. A parent route (`/collage`) contains multiple child routes like `/collage/student`, `/collage/department`, and `/collage/collageDetail`.
+
+## Key Concepts
+
+### 1. What is Nested Routing?
+
+Nested routing allows one route to render **sub-routes** within itself. The child routes are displayed **inside the parent component**, not separately.
+
+### 2. How to Define Nested Routes
+
+In your `MainRouter.jsx`:
+
+```jsx
+<Route path="/collage" element={<Collage />}>
+  <Route path="student" element={<Student />} />
+  <Route path="collageDetail" element={<CollageDetails />} />
+  <Route path="department" element={<Department />} />
+</Route>
+```
+
+These routes will be accessible as:
+
+- `/collage/student`
+- `/collage/collageDetail`
+- `/collage/department`
+
+---
+
+## Header Navigation
+
+In `Header.jsx`, a new link is added:
+
+```jsx
+<Link to="/collage" className="link">
+  Collage
+</Link>
+```
+
+---
+
+## Collage Page with Nested Links
+
+In `Collage.jsx`, use `<Outlet />` and nested navigation:
+
+```jsx
+import { Link, Outlet } from "react-router-dom";
+import "./style.css";
+
+function Collage() {
+  return (
+    <div className="collage">
+      <h2>Welcome to Collage Section</h2>
+      <ul>
+        <li>
+          <Link to="student" className="link">
+            Student
+          </Link>
+        </li>
+        <li>
+          <Link to="department" className="link">
+            Department
+          </Link>
+        </li>
+        <li>
+          <Link to="collageDetail" className="link">
+            Collage Detail
+          </Link>
+        </li>
+      </ul>
+      <Outlet />
+    </div>
+  );
+}
+
+export default Collage;
+```
+
+---
+
+## Child Components
+
+Each child component (e.g., `Student.jsx`) is simple:
+
+```jsx
+function Student() {
+  return <h2>Student</h2>;
+}
+```
+
+(Same for `CollageDetails.jsx`, `Department.jsx`)
+
+---
+
+## Styling (`style.css`)
+
+```css
+.collage ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.collage .link {
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  padding: 10px;
+}
+```
+
+---
+
+## Test URLs
+
+| URL                      | Result                         |
+| ------------------------ | ------------------------------ |
+| `/collage`               | Shows collage home page        |
+| `/collage/student`       | Shows Student component        |
+| `/collage/department`    | Shows Department component     |
+| `/collage/collageDetail` | Shows CollageDetails component |
+
+---
+
+- `Route` nesting allows child routes inside parent components.
+- Use `<Outlet />` in the parent to render child content.
+- Keep routes organized with folders for scalability.
+
+---

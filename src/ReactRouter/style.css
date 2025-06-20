@@ -17,7 +17,7 @@
     display: flex;
     margin: 0px;
     justify-content: space-between;
-    width: 300px;
+    width: 400px;
 }
 
 .header ul li{
@@ -33,4 +33,19 @@
     text-decoration: none;
     font-size: 20px;
     color: black;
+}
+
+.collage ul{
+    list-style: none;
+    display: flex;
+    margin: 0px;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.collage .link{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    padding: 10px;
 }
