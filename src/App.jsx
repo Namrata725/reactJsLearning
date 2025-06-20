@@ -42,6 +42,7 @@ import CustomHook from "./CustomHook";
 import MainComponent from "./ContextAPI/MainComponent";
 import RouteDemo from "./RouteDemo";
 import MainRouter from "./ReactRouter/MainRouter";
+import MainPageNotFound from "../PageNotFoundDemo/MainPageNotFound";
 function App() {
   return (
     <div>
@@ -107,7 +108,9 @@ function App() {
       {/* <MainComponent /> */}
       {/* <RouteDemo /> */}
 
-      <MainRouter />
+      {/* <MainRouter /> */}
+
+      <MainPageNotFound />
     </div>
   );
 }

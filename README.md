@@ -2653,3 +2653,51 @@ ReactRouter/
 └── main.jsx # ReactDOM entry point using <BrowserRouter>
 
 ---
+
+## 404 Page & Redirection in React Router
+
+This guide explains how to handle **404 Not Found** errors and redirect users using React Router (v6+).
+
+---
+
+### What is a 404 Page?
+
+- A **404 page** is shown when the user visits a route that **does not exist**.
+- It helps inform users that the page is unavailable or mistyped.
+
+---
+
+### Steps to Handle 404 in React Router
+
+#### 1. **Create a 404 Component**
+
+This component will be shown when no route matches.
+
+```jsx
+function PageNotFound() {
+  return (
+    <div>
+      <h1>Page Not Found</h1>
+      <Link to="/">Go Back Home</Link>
+    </div>
+  );
+}
+```
+
+#### 2. **Define a Catch-All Route**
+
+Use path="/\*" to catch all unmatched paths.
+
+```jsx
+<Route path="/*" element={<PageNotFound />} />
+```
+
+#### 3. **Redirect Instead of Showing 404**
+
+If you want to redirect to the Home page instead of showing the 404 page:
+
+```jsx
+<Route path="/*" element={<Navigate to="/" />} />
+```
+
+## demo code file :: PageNotfound/ MainPageNotFound.jsx & PageNotfound/ PageNotFound.jsx
