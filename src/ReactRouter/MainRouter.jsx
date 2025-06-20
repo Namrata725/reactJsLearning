@@ -11,15 +11,17 @@ import Department from "./NestedNavigate/Department";
 function MainRouter() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login />} />
+        <Route element={<Header />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
+        </Route>
         {/* ------------ */}
 
         <Route path="/collage" element={<Collage />}>
-          <Route path="student" element={<Student />} />
+          <Route index element={<Student />} />
           <Route path="collageDetail" element={<CollageDetails />} />
           <Route path="department" element={<Department />} />
         </Route>
