@@ -2852,7 +2852,6 @@ Instead of repeating the same layout (e.g., header) in every route, you define i
   <Route path="/about" element={<About />} />
   <Route path="/login" element={<Login />} />
 </Route>
-
 ```
 
 Here:
@@ -2865,29 +2864,27 @@ Here:
 - The <Outlet /> component renders the matched child route inside a layout.
 - Used inside layout components like Header.jsx or Collage.jsx.
 
-
 ```jsx
 function Header() {
   return (
     <div>
       <div className="header"> ... </div>
-      <Outlet />  // renders child route component here
+      <Outlet /> // renders child route component here
     </div>
   );
 }
 ```
 
 ## What is an Index Route?
+
 An index route is a default child route that renders when the parent path matches exactly.
 
 ```jsx
-
 <Route path="/collage" element={<Collage />}>
   <Route index element={<Student />} />
   <Route path="collageDetail" element={<CollageDetails />} />
   <Route path="department" element={<Department />} />
 </Route>
-
 ```
 
 ## Explanation
@@ -2919,4 +2916,47 @@ An index route is a default child route that renders when the parent path matche
 | `/collage/department`    | Collage layout + Department     |
 | `/collage/collageDetail` | Collage layout + CollageDetails |
 
+---
 
+## Prefix in React Router
+
+### What is a Prefix?
+
+In routing, a **prefix** is a common path segment shared by multiple routes.
+
+It helps group related routes under a single path — for example, all routes related to users (`/user/about`, `/user/login`) share the prefix `/user`.
+
+---
+
+### Example
+
+```jsx
+<Route element={<Header />}>
+  <Route path="/" element={<Home />} />
+
+  {/* Grouping routes under '/user' prefix */}
+  <Route path="user">
+    <Route path="/user/about" element={<About />} />
+    <Route path="/user/login" element={<Login />} />
+  </Route>
+</Route>
+```
+
+- /user is the prefix path.
+- /user/about and /user/login are child routes nested under /user
+
+## Navigation Links in Header
+
+```jsx
+<Link className="link" to="/user/about">About</Link>
+<Link className="link" to="/user/login">Login</Link>
+
+```
+
+These links point to routes prefixed with /user, matching the nested route configuration.
+
+## Benefits of Using Prefix
+
+- Groups related routes together (e.g., /admin/_, /user/_).
+- Keeps route structure modular and clean.
+- Makes layout-based routing easier when using Outlet.
