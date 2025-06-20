@@ -41,6 +41,7 @@ import FragmentDemo from "./FragmentDemo";
 import CustomHook from "./CustomHook";
 import MainComponent from "./ContextAPI/MainComponent";
 import RouteDemo from "./RouteDemo";
+import MainRouter from "./ReactRouter/MainRouter";
 function App() {
   return (
     <div>
@@ -104,7 +105,9 @@ function App() {
       {/* <CustomHook /> */}
 
       {/* <MainComponent /> */}
-      <RouteDemo />
+      {/* <RouteDemo /> */}
+
+      <MainRouter />
     </div>
   );
 }

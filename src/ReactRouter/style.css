@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    background-color: rgb(69, 188, 218);
+    
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header ul{
+    list-style: none;
+    display: flex;
+    margin: 0px;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.header ul li{
+    padding: 10px;
+ 
+}
+
+.header .link h2{
+    margin: 0px;
+}
+
+.header .link{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
