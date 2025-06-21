@@ -3304,3 +3304,70 @@ async function getUserData() {
 ```
 
 ---
+
+## Install JSON Server and Create a REST API
+
+---
+
+### What is JSON Server?
+
+**JSON Server** is a simple tool that lets you create a **full fake REST API** using a local `db.json` file. Perfect for prototyping, testing, or front-end development without a real backend.
+
+- No need to write backend code.
+- Supports full CRUD operations: `GET`, `POST`, `PUT`, `DELETE`.
+
+---
+
+## Step 1: Create a Project Folder
+
+Create a new folder for your mock API project.
+
+```bash
+mkdir json-api-server
+cd json-api-server
+```
+
+## Step 2: Create db.json File
+
+Create a file named db.json and add the following data:
+
+```json
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane@example.com"
+    }
+  ]
+}
+```
+
+This simulates a user database.
+
+## Step 3: Install JSON Server
+
+Install JSON Server globally using npm:
+
+```bash
+
+npm install -g json-server
+
+```
+
+## Pass it to JSON Server CLI
+
+```bash
+
+npx json-server db.json
+
+```
+
+This will start your API server on:
+
+**http://localhost:3000**
