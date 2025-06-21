@@ -3161,3 +3161,54 @@ This makes the active link bold and blue.
 ```
 
 ---
+
+## What is an API?
+
+**API** stands for **Application Programming Interface**.
+
+An API acts as a **bridge** between different software systems. It allows communication between client-side applications (like JavaScript in a browser) and backend services or databases.
+
+---
+
+### Why Do We Need an API?
+
+- JavaScript (running in the browser) **cannot directly connect** to databases.
+- To fetch or manipulate data from a database, we create an **API using backend languages** like:
+  - Node.js
+  - PHP
+  - Java
+  - Python
+
+These APIs interact with the database and then provide data to the frontend.
+
+---
+
+### API in Multi-Platform Projects
+
+APIs are **reusable** and used across **multiple platforms**:
+
+| Platform    | Uses the Same API |
+| ----------- | ----------------- |
+| Web App     | yes               |
+| Mobile App  | yes               |
+| Desktop App | yes               |
+
+This ensures consistent data everywhere.
+
+---
+
+## Data Format in API
+
+The most common data format used in APIs is:
+
+### JSON (JavaScript Object Notation)
+
+Example response:
+
+```json
+{
+  "id": 1,
+  "name": "Namrata",
+  "role": "Developer"
+}
+```
