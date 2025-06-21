@@ -17,8 +17,8 @@ function MainRouter() {
       <Routes>
         <Route element={<Header />}>
           <Route path="/" element={<Home />} />
-          <Route path="/user" element={<UserList />} />
-          <Route path="/user/:id" element={<UserPage />} />
+          <Route path="/user/list?" element={<UserList />} />
+          <Route path="/user/:id/:name?" element={<UserPage />} />
 
           <Route path="user">
             <Route path="/user/about" element={<About />} />

@@ -3024,3 +3024,70 @@ const paramsData = useParams();
 ```
 
 ---
+
+## React Router: Optional Segments
+
+React Router allows defining **optional segments** in routes using the `?` character. This is useful when a route may or may not include a specific part (like a parameter or a keyword).
+
+---
+
+### What is an Optional Segment?
+
+An optional segment allows part of a URL path to be **optional** — meaning the route will match with or without it.
+
+### Example Syntax
+
+```jsx
+<Route path="/user/list?" element={<UserList />} />
+<Route path="/user/:id/:name?" element={<UserPage />} />
+```
+
+- **list?** — optional static segment (/user or /user/list)
+- **:name?** — optional dynamic parameter (/user/1 or /user/1/sachin)
+
+## Static Optional Segment
+
+```jsx
+<Route path="/user/list?" element={<UserList />} />
+```
+
+- /user
+- /user/list
+  Use case: You want to keep /user and /user/list behaving the same way.
+
+## Dynamic Optional Segment
+
+```jsx
+<Route path="/user/:id/:name?" element={<UserPage />} />
+```
+
+- /user/2
+- /user/2/ranjana
+
+This allows /user/:id to work with or without the :name parameter.
+
+Inside UserPage.jsx, use useParams():
+
+```jsx
+const { id, name } = useParams();
+```
+
+## Then render:
+
+```jsx
+
+<h4>User ID: {id}</h4>
+<h4>Name: {name}</h4>
+
+```
+
+## Links in UserList
+
+```jsx
+<Link to={"/user/" + user.id + "/" + user.name}>{user.name}</Link>
+```
+
+This creates links like:
+
+- /user/1/sachin
+- /user/3/anil

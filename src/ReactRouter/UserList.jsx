@@ -23,23 +23,45 @@ function UserList() {
     },
   ];
   return (
-    <div>
-      <h1>User List</h1>
-      {userdata.map((user) => {
-        return (
-          <div
-            key={user.id}
-            style={{
-              paddingLeft: "20PX",
-            }}
-          >
-            <h4>
-              <Link to={"/user/" + user.id}>{user.name}</Link>
-            </h4>
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <div>
+        <h1>User List</h1>
+        {userdata.map((user) => {
+          return (
+            <div
+              key={user.id}
+              style={{
+                paddingLeft: "20PX",
+              }}
+            >
+              <h4>
+                <Link to={"/user/" + user.id}>{user.name}</Link>
+              </h4>
+            </div>
+          );
+        })}
+      </div>
+
+      <div>
+        <h1>User List</h1>
+        {userdata.map((user) => {
+          return (
+            <div
+              key={user.id}
+              style={{
+                paddingLeft: "20PX",
+              }}
+            >
+              <h4>
+                <Link to={"/user/" + user.id + "/" + user.name}>
+                  {user.name}
+                </Link>
+              </h4>
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 }
 

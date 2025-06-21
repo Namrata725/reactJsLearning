@@ -39,6 +39,12 @@ function Header() {
                 Users
               </Link>
             </li>
+
+            <li>
+              <Link to="/user/list" className="link">
+                List
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
