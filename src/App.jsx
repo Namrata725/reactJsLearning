@@ -43,6 +43,7 @@ import MainComponent from "./ContextAPI/MainComponent";
 import RouteDemo from "./RouteDemo";
 import MainRouter from "./ReactRouter/MainRouter";
 import MainPageNotFound from "../PageNotFoundDemo/MainPageNotFound";
+import FetchDataGetMethod from "./API/FetchDataGetMethod";
 function App() {
   return (
     <div>
@@ -112,7 +113,9 @@ function App() {
 
       {/* <MainPageNotFound /> */}
 
-      <MainRouter />
+      {/* <MainRouter /> */}
+
+      <FetchDataGetMethod />
     </div>
   );
 }

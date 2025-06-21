@@ -3212,3 +3212,95 @@ Example response:
   "role": "Developer"
 }
 ```
+
+---
+
+## Fetch API Using GET Method
+
+---
+
+### API Method
+
+The most common HTTP methods used with APIs are:
+
+- **GET**: Retrieve data (Read)
+- **POST**: Send new data (Create)
+- **PUT / PATCH**: Update existing data
+- **DELETE**: Remove data
+
+In this case, we’re using the **GET** method to fetch data.
+
+---
+
+### Test API with Thunder Client (VS Code Extension)
+
+Before using an API in your project, you can **test** it in tools like:
+
+- **Thunder Client** (VS Code extension)
+- **Postman**
+- **cURL**
+
+Example Test:
+
+GET **https://dummyjson.com/users**
+
+- Response will be in **JSON** format.
+- Confirm it returns expected fields like `firstName`, `lastName`, `age`, etc.
+
+---
+
+## Integrate API in React
+
+1. Use `useEffect` to fetch data after component mounts.
+2. Use `fetch()` to send GET request.
+3. Use `useState` to store the response.
+
+### Code Flow:
+
+```js
+useEffect(() => {
+  getUserData();
+}, []);
+
+async function getUserData() {
+  const url = "https://dummyjson.com/users";
+  let response = await fetch(url);
+  response = await response.json();
+  setUserData(response.users);
+}
+```
+
+### Display API Data
+
+```jsx
+{
+  userData.map((user) => {
+    return (
+      <ul key={user.id} className="user-list">
+        <li>{user.firstName}</li>
+        <li>{user.lastName}</li>
+        <li>{user.age}</li>
+      </ul>
+    );
+  });
+}
+```
+
+## Sample CSS Styling
+
+```css
+.user-list {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+}
+.user-list li {
+  list-style: none;
+  flex-direction: column;
+  margin: 10px;
+}
+```
+
+---
