@@ -3091,3 +3091,73 @@ This creates links like:
 
 - /user/1/sachin
 - /user/3/anil
+
+---
+
+# React Router: NavLink and Active Class
+
+## What is `NavLink`?
+
+`NavLink` is a special version of `Link` provided by React Router. It not only navigates between routes but also provides styling capabilities for the **active** route.
+
+This is helpful to highlight the currently active page in a navigation menu (e.g., by bolding or coloring it).
+
+---
+
+## `Link` vs `NavLink`
+
+| Feature        | `Link`            | `NavLink`                             |
+| -------------- | ----------------- | ------------------------------------- |
+| Navigation     | Yes               | Yes                                   |
+| Active Styling | No                | Yes (`isActive` or `activeClassName`) |
+| Use Case       | Simple navigation | Navigation + active state styling     |
+
+---
+
+## Applying Active Class
+
+### Using `NavLink` with Dynamic `className`
+
+```jsx
+<NavLink
+  className={({ isActive }) => (isActive ? "customActive" : "link")}
+  to="/"
+>
+  Home
+</NavLink>
+```
+
+- If this link is active, it uses customActive.
+- Otherwise, it uses the regular link class.
+
+## CSS
+
+```css
+.link {
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+
+.customActive {
+  font-weight: 800;
+  color: blue;
+}
+```
+
+This makes the active link bold and blue.
+
+## Usage in Header
+
+```jsx
+
+<NavLink to="/" className="link">Home</NavLink>
+<NavLink to="/user/about" className="link">About</NavLink>
+<NavLink to="/user/login" className="link">Login</NavLink>
+<NavLink to="/collage" className="link">Collage</NavLink>
+<NavLink to="/user" className="link">Users</NavLink>
+<NavLink to="/user/list" className="link">List</NavLink>
+
+```
+
+---

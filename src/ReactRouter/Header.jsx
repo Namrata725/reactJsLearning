@@ -1,49 +1,49 @@
-import { Link, Outlet } from "react-router";
+import { Link, NavLink, Outlet } from "react-router";
 import "./style.css";
 function Header() {
   return (
     <div>
       <div className="header">
         <div>
-          <Link to="/" className="link">
+          <NavLink to="/" className="link">
             <h2>Logo</h2>{" "}
-          </Link>
+          </NavLink>
         </div>
 
         <div>
           <ul>
             <li>
-              <Link to="/" className="link">
+              <NavLink to="/" className="link">
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link className="link" to="/user/about">
+              <NavLink className="link" to="/user/about">
                 About
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link className="link" to="/user/login">
+              <NavLink className="link" to="/user/login">
                 LogIn
-              </Link>
+              </NavLink>
             </li>
 
             <li>
-              <Link to="/collage" className="link">
+              <NavLink to="/collage" className="link" end>
                 Collage
-              </Link>
+              </NavLink>
             </li>
 
             <li>
-              <Link to="/user" className="link">
+              <NavLink to="/user" className="link" end>
                 Users
-              </Link>
+              </NavLink>
             </li>
 
             <li>
-              <Link to="/user/list" className="link">
+              <NavLink to="/user/list" className="link">
                 List
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>

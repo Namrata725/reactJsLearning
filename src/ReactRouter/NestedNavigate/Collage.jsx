@@ -4,7 +4,7 @@ function Collage() {
   return (
     <div style={{ textAlign: "center" }} className="collage">
       <h1>Collage</h1>
-      <NavLink to="" className="link">
+      <NavLink to="" className="link" end>
         Student
       </NavLink>
       <NavLink to="department" className="link">
