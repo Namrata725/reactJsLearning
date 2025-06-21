@@ -7,6 +7,8 @@ import Collage from "./NestedNavigate/Collage";
 import Student from "./NestedNavigate/Student";
 import CollageDetails from "./NestedNavigate/CollageDetails";
 import Department from "./NestedNavigate/Department";
+import UserList from "./UserList";
+import UserPage from "./UserPage";
 
 function MainRouter() {
   return (
@@ -15,6 +17,9 @@ function MainRouter() {
       <Routes>
         <Route element={<Header />}>
           <Route path="/" element={<Home />} />
+          <Route path="/user" element={<UserList />} />
+          <Route path="/user/:id" element={<UserPage />} />
+
           <Route path="user">
             <Route path="/user/about" element={<About />} />
             <Route path="/user/login" element={<Login />} />

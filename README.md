@@ -2960,3 +2960,67 @@ These links point to routes prefixed with /user, matching the nested route confi
 - Groups related routes together (e.g., /admin/_, /user/_).
 - Keeps route structure modular and clean.
 - Makes layout-based routing easier when using Outlet.
+
+---
+
+## Dynamic Routes in React Router
+
+### What are Dynamic Routes?
+
+Dynamic routes allow you to capture part of the URL as a **parameter** and display different content based on that parameter.
+
+It’s useful when you want to show **individual user details**, **product pages**, **blog posts**, etc.
+
+---
+
+### Example Route Setup
+
+```jsx
+<Route path="/user" element={<UserList />} />
+<Route path="/user/:id" element={<UserPage />} />
+
+```
+
+- /user → Shows all users.
+- /user/:id → Shows details of a user based on the id.
+
+## Navigation Link in Header
+
+```jsx
+<li>
+  <Link to="/user" className="link">
+    Users
+  </Link>
+</li>
+```
+
+## User List Page
+
+This page shows a list of users with clickable links that navigate to dynamic user details.
+
+```jsx
+<Link to={"/user/" + user.id}>{user.name}</Link>
+```
+
+- Clicking sachin will go to /user/1
+- Clicking sunny will go to /user/5
+
+## User Detail Page
+
+This page uses useParams() to extract the id from the URL:
+
+```jsx
+const paramsData = useParams();
+<h4>User id is: {paramsData.id}</h4>;
+```
+
+- Visiting /user/2 will show User id is: 2.
+
+## Back navigation:
+
+`` jsx
+
+<Link to="/user">Back to home</Link>
+```
+
+---

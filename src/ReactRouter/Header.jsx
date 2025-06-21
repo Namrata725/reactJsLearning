@@ -24,13 +24,19 @@ function Header() {
             </li>
             <li>
               <Link className="link" to="/user/login">
-                LongIn
+                LogIn
               </Link>
             </li>
 
             <li>
               <Link to="/collage" className="link">
                 Collage
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/user" className="link">
+                Users
               </Link>
             </li>
           </ul>
