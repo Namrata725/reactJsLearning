@@ -3523,3 +3523,81 @@ function UserAdd() {
 ```
 
 ## Code file: JsonApiIntegrationWithLoader , MainAPI.jsx, UserAdd
+
+---
+
+## Integrate POST Method in API (with Validation) - React + JSON Server
+
+This document explains how to add new users to an API using the **POST method** in React and includes input **validation** before sending the request.
+
+---
+
+### Why Use POST Method?
+
+The **POST** method is used to **send new data** (like a new user) to the server.
+
+### Example Use Case:
+
+- Submitting a user registration form
+
+---
+
+### Key Implementation Steps
+
+### 1 Create Input Fields
+
+```jsx
+<input placeholder="Enter Name" onChange={(e) => setName(e.target.value)} />
+<input placeholder="Enter Age" onChange={(e) => setAge(e.target.value)} />
+<input placeholder="Enter Email" onChange={(e) => setEmail(e.target.value)} />
+
+```
+
+### 2 Create State for Inputs
+
+```jsx
+const [name, setName] = useState("");
+const [age, setAge] = useState("");
+const [email, setEmail] = useState("");
+```
+
+These states hold the input values in real time.
+
+### 3 Add Validation Before POST
+
+Before making the API request, check if all fields are filled:
+
+```jsx
+if (!name || !age || !email) {
+  alert("Please fill in all fields.");
+  return;
+}
+```
+
+### 4 Send Data to JSON Server Using POST
+
+```jsx
+const response = await fetch("http://localhost:3000/users", {
+  method: "POST",
+  body: JSON.stringify({ name, age, email }),
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+```
+
+If the response is successful:
+
+```jsx
+if (response) {
+  alert("User Created Successfully");
+}
+```
+
+```jsx
+if (response) {
+  alert("User Created Successfully");
+}
+```
+
+---
