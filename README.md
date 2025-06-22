@@ -3729,3 +3729,87 @@ function UserEdit() {
 You now have a working input form for editing.
 
 ### file name: JsonApiIntegrationWithLoader.jsx, MainAPI.jsx, UserEdit.jsx
+
+---
+
+# 🧾 Populate Input Fields with API Data
+
+This guide explains how to **fetch user data using ID from the URL** and populate the input fields on the edit page using React and JSON Server.
+
+---
+
+## What You’ll Learn
+
+- Get dynamic ID from the route
+- Call API to fetch single user data
+- Store data in state
+- Bind data to input fields
+
+---
+
+## Implementation Steps
+
+### 1 Get `id` from the URL
+
+Use `useParams()` from `react-router` to extract dynamic ID from the route:
+
+```js
+const { id } = useParams();
+```
+
+### 2 Create State for User Data
+
+```jsx
+const [name, setName] = useState("");
+const [age, setAge] = useState("");
+const [email, setEmail] = useState("");
+```
+
+---
+
+### 3 Fetch User Data using ID
+
+Use **useEffect()** to call the API once the component mounts:
+
+```jsx
+useEffect(() => {
+  getUserData();
+}, []);
+```
+
+---
+
+Define the **getUserData()** function:
+
+```jsx
+const getUserData = async () => {
+  const url = "http://localhost:3000/users/" + id;
+  let response = await fetch(url);
+  response = await response.json();
+  setName(response.name);
+  setAge(response.age);
+  setEmail(response.email);
+};
+```
+
+---
+
+### 4 Populate the Input Fields
+
+Bind each state to the respective input fields using the **value** attribute:
+
+```jsx
+
+<input type="text" value={name} placeholder="Enter name" />
+<input type="text" value={age} placeholder="Enter age" />
+<input type="text" value={email} placeholder="Enter email" />
+
+```
+
+## Result
+
+When you visit a route like /edit/2, the component:
+
+- Extracts ID (2)
+- Fetches user data from API (/users/2)
+- Displays that data in input fields
