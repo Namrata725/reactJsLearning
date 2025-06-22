@@ -19,7 +19,8 @@ export default function JsonApiIntegrationWithLoader() {
 
   return (
     <div>
-      <h2>integrate json server API and loader</h2>
+      {/* <h2>integrate json server API and loader</h2> */}
+      <h2>User-List</h2>
       <ul className="user-list">
         <li>S.N</li>
         <li>Name</li>

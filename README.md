@@ -3441,3 +3441,85 @@ Display a message while loading:
 ```
 
 ---
+
+## Routes for User List and Add User UI (React + JSON Server)
+
+This guide helps you set up routing for a **User List** and **Add User** screen using `react-router-dom` and JSON Server.
+
+---
+
+### Step 1: Wrap App with `BrowserRouter`
+
+To enable routing in React, wrap your app with `<BrowserRouter>` in `main.jsx` or `index.jsx`:
+
+```jsx
+import { BrowserRouter } from "react-router-dom";
+import ReactDOM from "react-dom/client";
+import MainAPI from "./MainAPI";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <BrowserRouter>
+    <MainAPI />
+  </BrowserRouter>
+);
+```
+
+### step 2: Make Routes
+
+In MainAPI.jsx, define your routes:
+
+```jsx
+<Routes>
+  <Route path="/" element={<JsonApiIntegrationWithLoader />} />
+  <Route path="/add" element={<UserAdd />} />
+</Routes>
+```
+
+### Step 3: Create Components for User List and Add User
+
+#### User List Component
+
+This component fetches and displays a list of users from JSON Server:
+
+```jsx
+useEffect(() => {
+  setLoading(true);
+  getUserData();
+}, []);
+
+async function getUserData() {
+  const response = await fetch("http://localhost:3000/users");
+  const data = await response.json();
+  setUserData(data);
+  setLoading(false);
+}
+```
+
+#### User Add Component
+
+A simple placeholder component for adding users:
+
+```jsx
+function UserAdd() {
+  return (
+    <div>
+      <h1>Add User</h1>
+    </div>
+  );
+}
+```
+
+### step 4: Step 4: Add Navigation Links
+
+```jsx
+<ul className="nav-list">
+  <li>
+    <NavLink to="/">User List</NavLink>
+  </li>
+  <li>
+    <NavLink to="/add">User Add</NavLink>
+  </li>
+</ul>
+```
+
+## Code file: JsonApiIntegrationWithLoader , MainAPI.jsx, UserAdd

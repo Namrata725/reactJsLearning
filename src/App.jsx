@@ -45,6 +45,7 @@ import MainRouter from "./ReactRouter/MainRouter";
 import MainPageNotFound from "../PageNotFoundDemo/MainPageNotFound";
 import FetchDataGetMethod from "./API/FetchDataGetMethod";
 import JsonApiIntegrationWithLoader from "./API/JsonApiIntegrationWithLoader";
+import MainAPI from "./API/MainAPI";
 function App() {
   return (
     <div>
@@ -117,7 +118,8 @@ function App() {
       {/* <MainRouter /> */}
 
       {/* <FetchDataGetMethod /> */}
-      <JsonApiIntegrationWithLoader />
+      {/* <JsonApiIntegrationWithLoader /> */}
+      <MainAPI />
     </div>
   );
 }

@@ -12,3 +12,13 @@
   margin: 10px;
 }
 
+.nav-list{
+  display: flex;
+  width: 400px;
+  justify-content:space-around ;
+  list-style: none;
+}
+
+.nav-list li{
+  list-style: none;
+}
