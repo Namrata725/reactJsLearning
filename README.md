@@ -3371,3 +3371,73 @@ npx json-server db.json
 This will start your API server on:
 
 **http://localhost:3000**
+
+---
+
+## Integrate JSON Server API and Loader in React
+
+This guide walks you through fetching data from a **JSON Server API**, displaying it in a UI, and showing a **loader** while data is being fetched.
+
+---
+
+### Step 1: Make a Fetch Function
+
+Use the `fetch()` API to call data from your local JSON server.
+
+```js
+const getUserData = async () => {
+  const url = "http://localhost:3000/users";
+  let response = await fetch(url);
+  response = await response.json();
+  setUserData(response);
+  setLoading(false);
+};
+```
+
+### Step 2: # 🔄 Integrate JSON Server API and Loader in React
+
+This guide walks you through fetching data from a **JSON Server API**, displaying it in a UI, and showing a **loader** while data is being fetched.
+
+---
+
+## Step 1: Make a Fetch Function
+
+Use the `fetch()` API to call data from your local JSON server.
+
+```js
+const getUserData = async () => {
+  const url = "http://localhost:3000/users";
+  let response = await fetch(url);
+  response = await response.json();
+  setUserData(response);
+  setLoading(false);
+};
+```
+
+## Step 3: Handle Loading State
+
+Create a state for loading:
+
+```JSX
+const [loading, setLoading] = useState(false);
+
+```
+
+Trigger it before and after fetching data:
+
+```jsx
+useEffect(() => {
+  setLoading(true);
+  getUserData();
+}, []);
+```
+
+Display a message while loading:
+
+```jsx
+
+{loading ? <h1>Loading...</h1> : /* show data */}
+
+```
+
+---
