@@ -17,6 +17,14 @@ export default function JsonApiIntegrationWithLoader() {
     getUserData();
   }, []);
 
+  const deleteUser = async (id) => {
+    const url = `http://localhost:3000/users/${id}`;
+    let response = await fetch(url, {
+      method: "DELETE",
+    });
+    response = await response.json();
+    getUserData();
+  };
   return (
     <div>
       {/* <h2>integrate json server API and loader</h2> */}
@@ -24,8 +32,9 @@ export default function JsonApiIntegrationWithLoader() {
       <ul className="user-list">
         <li>S.N</li>
         <li>Name</li>
-        <li>email</li>
-        <li>age</li>
+        <li>Email</li>
+        <li>Age</li>
+        <li>Action</li>
       </ul>
 
       {!loading ? (
@@ -36,6 +45,15 @@ export default function JsonApiIntegrationWithLoader() {
               <li>{user.name}</li>
               <li>{user.email}</li>
               <li>{user.age}</li>
+              <li>
+                <button
+                  onClick={() => {
+                    deleteUser(user.id);
+                  }}
+                >
+                  Delete
+                </button>
+              </li>
             </ul>
           </div>
         ))

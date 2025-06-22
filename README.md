@@ -3534,7 +3534,7 @@ This document explains how to add new users to an API using the **POST method** 
 
 ### Why Use POST Method?
 
-The **POST** method is used to **send new data** (like a new user) to the server.
+The **POST** method is used to **store** or **create new user** new data\*\* (like a new user) to the server.
 
 ### Example Use Case:
 
@@ -3598,6 +3598,63 @@ if (response) {
 if (response) {
   alert("User Created Successfully");
 }
+```
+
+---
+
+## Integrate API for DELETE Method (React + JSON Server)
+
+This guide shows how to **delete a user** using an API in React with the `DELETE` method from JSON Server.
+
+---
+
+### Why DELETE Method?
+
+The **DELETE** HTTP method is used to remove data (e.g., a user) from a server/database.
+
+---
+
+### Steps to Implement
+
+### Add Delete Button to UI
+
+Inside your user list loop, add a `Delete` button:
+
+```jsx
+<li>
+  <button onClick={() => deleteUser(user.id)}>Delete</button>
+</li>
+```
+
+Each button passes the specific user's **id** to the **deleteUser** function.
+
+### 2 Create the Delete Function
+
+Use the fetch() API with method: "DELETE":
+
+```jsx
+const deleteUser = async (id) => {
+  const url = `http://localhost:3000/users/${id}`;
+  let response = await fetch(url, {
+    method: "DELETE",
+  });
+  response = await response.json();
+  getUserData(); // Refresh the list after deletion
+};
+```
+
+- **url** targets the user by ID
+
+- **DELETE** method removes the user
+
+- After deletion, **getUserData()** is called to refresh the UI
+
+### 3 Update Table Headers
+
+To indicate delete functionality clearly, update your list header:
+
+```jsx
+<li>Action</li>
 ```
 
 ---
