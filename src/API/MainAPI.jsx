@@ -2,6 +2,7 @@ import { NavLink, Route, Routes } from "react-router";
 import "./style.css";
 import JsonApiIntegrationWithLoader from "./JsonApiIntegrationWithLoader";
 import UserAdd from "./UserAdd";
+import UserEdit from "./UserEdit";
 function MainAPI() {
   return (
     <div>
@@ -17,6 +18,7 @@ function MainAPI() {
       <Routes>
         <Route path="/" element={<JsonApiIntegrationWithLoader />} />
         <Route path="/add" element={<UserAdd />} />
+        <Route path="/edit/:id" element={<UserEdit />} />
       </Routes>
     </div>
   );

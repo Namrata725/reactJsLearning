@@ -3658,3 +3658,74 @@ To indicate delete functionality clearly, update your list header:
 ```
 
 ---
+
+## Edit User Details (React + JSON Server)
+
+This guide helps you set up **edit functionality** in a React app where data is fetched from a JSON server API.
+
+---
+
+### Key Steps to Implement
+
+### 1 Add Edit Button in User List
+
+In the user listing component:
+
+```jsx
+<button onClick={() => editUser(user.id)}>Update User</button>
+```
+
+This triggers the edit function with the selected user's ID.
+
+### 2 Navigate to Edit Page
+
+Use **useNavigate** from **react-router** to change route:
+
+```jsx
+const navigate = useNavigate();
+const editUser = (id) => {
+  navigate("edit/" + id);
+};
+```
+
+---
+
+### 3 Define Route for Edit Page
+
+In your main routing file (**MainAPI.jsx**):
+
+```jsx
+<Route path="/edit/:id" element={<UserEdit />} />
+```
+
+This enables dynamic routing for each user's edit page.
+
+---
+
+### 4 Create Edit Page UI
+
+Create a new file: **UserEdit.jsx**
+
+```jsx
+function UserEdit() {
+  return (
+    <div style={{ textAlign: "center" }}>
+      <h3>Edit User</h3>
+      <input type="text" placeholder="Enter name" />
+      <br />
+      <br />
+      <input type="text" placeholder="Enter age" />
+      <br />
+      <br />
+      <input type="text" placeholder="Enter email" />
+      <br />
+      <br />
+      <button>Update</button>
+    </div>
+  );
+}
+```
+
+You now have a working input form for editing.
+
+### file name: JsonApiIntegrationWithLoader.jsx, MainAPI.jsx, UserEdit.jsx

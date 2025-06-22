@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import "./style.css";
+import { useNavigate } from "react-router";
 
 export default function JsonApiIntegrationWithLoader() {
   const [userData, setUserData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const getUserData = async () => {
     const url = "http://localhost:3000/users";
     let response = await fetch(url);
@@ -24,6 +26,10 @@ export default function JsonApiIntegrationWithLoader() {
     });
     response = await response.json();
     getUserData();
+  };
+
+  const editUser = (id) => {
+    navigate("edit/" + id);
   };
   return (
     <div>
@@ -52,6 +58,14 @@ export default function JsonApiIntegrationWithLoader() {
                   }}
                 >
                   Delete
+                </button>
+
+                <button
+                  onClick={() => {
+                    editUser(user.id);
+                  }}
+                >
+                  Update User
                 </button>
               </li>
             </ul>
