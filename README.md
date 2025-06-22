@@ -3813,3 +3813,78 @@ When you visit a route like /edit/2, the component:
 - Extracts ID (2)
 - Fetches user data from API (/users/2)
 - Displays that data in input fields
+
+---
+
+## Update Data with PUT API Method
+
+In this section, you'll learn how to **update a user's data** using a form in React, with JSON Server acting as your backend API.
+
+---
+
+### What You’ll Learn
+
+- How to update form state
+- How to call `PUT` API to update data
+- How to show success message and navigate after update
+
+---
+
+### Key Implementation Steps
+
+### 1 Update State Values via Input Fields
+
+Bind the input fields with `value` and `onChange` handlers:
+
+```jsx
+<input
+  type="text"
+  placeholder="Enter name"
+  value={name}
+  onChange={(e) => setName(e.target.value)}
+/>
+<input
+  type="text"
+  placeholder="Enter age"
+  value={age}
+  onChange={(e) => setAge(e.target.value)}
+/>
+<input
+  type="text"
+  placeholder="Enter email"
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+/>
+
+```
+
+## Create the Update Function (PUT)
+
+Call the update API using fetch and the PUT method:
+
+```jsx
+const updateUserData = async () => {
+  const response = await fetch(url, {
+    method: "PUT",
+    body: JSON.stringify({
+      name,
+      age,
+      email,
+    }),
+  });
+  const data = await response.json();
+  if (data) {
+    alert("Data updated successfully");
+    navigate("/");
+  }
+};
+```
+
+### 3 Redirect After Update
+
+Use **useNavigate()** from **react-router** to go back to the home/user list screen after successful update:
+
+```jsx
+const navigate = useNavigate();
+navigate("/");
+```

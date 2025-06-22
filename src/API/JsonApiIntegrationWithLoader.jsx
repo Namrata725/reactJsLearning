@@ -49,8 +49,8 @@ export default function JsonApiIntegrationWithLoader() {
             <ul className="user-list">
               <li>{index + 1}</li>
               <li>{user.name}</li>
-              <li>{user.email}</li>
               <li>{user.age}</li>
+              <li>{user.email}</li>
               <li>
                 <button
                   onClick={() => {
