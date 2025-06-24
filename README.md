@@ -3732,7 +3732,7 @@ You now have a working input form for editing.
 
 ---
 
-# 🧾 Populate Input Fields with API Data
+# Populate Input Fields with API Data
 
 This guide explains how to **fetch user data using ID from the URL** and populate the input fields on the edit page using React and JSON Server.
 
@@ -3888,3 +3888,62 @@ Use **useNavigate()** from **react-router** to go back to the home/user list scr
 const navigate = useNavigate();
 navigate("/");
 ```
+
+---
+
+# Simple Validation in React.js
+
+This example demonstrates how to implement **basic form validation** in React using hooks like `useState`.
+
+---
+
+## Key Steps
+
+1. **Create Input Fields**
+2. **Define State Variables** for input values and error messages
+3. **Apply Validation Rules**
+4. **Display Error Messages Dynamically**
+
+---
+
+## Step-by-Step Breakdown
+
+### 1 Create Input Fields and States
+
+```jsx
+const [name, setName] = useState("");
+const [nameError, setNameError] = useState("");
+```
+
+### 2. Apply Validation on Input Change
+
+```jsx
+const handleNameChange = (e) => {
+  const value = e.target.value;
+  setName(value);
+
+  if (value.length < 3) {
+    setNameError("Name must be at least 3 characters long.");
+  } else {
+    setNameError("");
+  }
+};
+```
+
+### 3. D Display Error Below Input
+
+```jsx
+<input
+  type="text"
+  placeholder="Enter your name"
+  onChange={handleNameChange}
+  value={name}
+/>;
+{
+  nameError && <span style={{ color: "red" }}>{nameError}</span>;
+}
+```
+
+## file : FormValidation -> SimpleFormValidation.js
+
+---

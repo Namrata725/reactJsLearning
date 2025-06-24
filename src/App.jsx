@@ -46,6 +46,7 @@ import MainPageNotFound from "../PageNotFoundDemo/MainPageNotFound";
 import FetchDataGetMethod from "./API/FetchDataGetMethod";
 import JsonApiIntegrationWithLoader from "./API/JsonApiIntegrationWithLoader";
 import MainAPI from "./API/MainAPI";
+import SimpleFormValidation from "./FormValidation/simpleFormValidation";
 function App() {
   return (
     <div>
@@ -119,7 +120,8 @@ function App() {
 
       {/* <FetchDataGetMethod /> */}
       {/* <JsonApiIntegrationWithLoader /> */}
-      <MainAPI />
+      {/* <MainAPI /> */}
+      <SimpleFormValidation />
     </div>
   );
 }
