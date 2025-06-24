@@ -48,6 +48,7 @@ import JsonApiIntegrationWithLoader from "./API/JsonApiIntegrationWithLoader";
 import MainAPI from "./API/MainAPI";
 import SimpleFormValidation from "./FormValidation/simpleFormValidation";
 import FormValidationUsingUseActionState from "./FormValidation/FormValidationUsingUseActionState";
+import UseReducerDemo from "./FormValidation/UseReducerDemo";
 function App() {
   return (
     <div>
@@ -123,7 +124,8 @@ function App() {
       {/* <JsonApiIntegrationWithLoader /> */}
       {/* <MainAPI /> */}
       {/* <SimpleFormValidation /> */}
-      <FormValidationUsingUseActionState />
+      {/* <FormValidationUsingUseActionState /> */}
+      <UseReducerDemo />
     </div>
   );
 }

@@ -3984,4 +3984,73 @@ const handleNameChange = (e) => {
 - Shows success message if validation passes
 - Keeps previous input values filled after submission
 
+## file : FormValidation -> FormValidationUsingUseActionState.jsx
+
+---
+
+## Validation with `useActionState` in React
+
+This guide demonstrates how to perform simple form validation using the `useActionState` hook in React.
+
+---
+
+## 1. Create Form with Input Fields
+
+Use a basic form with `name` and `password` fields:
+
+```jsx
+<form action={action}>
+  <input type="text" name="name" placeholder="enter name" />
+  <input type="text" name="password" placeholder="enter password" />
+  <button>Login</button>
+</form>
+```
+
+## 2. Define Action Function
+Create a function to handle form submission and validation:
+
+```jsx
+
+function handleLogin(prevData, formData) {
+  let name = formData.get("name");
+  let password = formData.get("password");
+  // validation logic
+}
+
+```
+
+## 3. Apply Validation
+Add conditions to check if name and password meet criteria:
+
+```jsx
+
+if (!name || name.length > 5) {
+  return {
+    error: "Name can't be empty or have more than 5 characters",
+    name,
+    password,
+  };
+} else if (!/^[A-Z0-9]+$/i.test(password)) {
+  return {
+    error: "Only numbers and alphabets are allowed in password",
+    name,
+    password,
+  };
+} else {
+  return { message: "Login successful", name, password };
+}
+
+```
+
+## 4.Display Error or Success Message
+Use conditional rendering to show validation messages:
+
+```jsx
+
+{data?.message && <span style={{ color: "green" }}>{data.message}</span>}
+{data?.error && <span style={{ color: "red" }}>{data.error}</span>}
+
+```
+---
+## demo file: FormValidation-> UseReducerDemo.jsx
 ---
