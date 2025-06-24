@@ -3947,3 +3947,41 @@ const handleNameChange = (e) => {
 ## file : FormValidation -> SimpleFormValidation.js
 
 ---
+
+## Validation with `useActionState` in React
+
+### Steps Covered
+
+1. Make form with input fields
+2. Define action function
+3. Apply validation logic
+4. Display error or success messages
+
+---
+
+### What is `useActionState`?
+
+- A React hook used to handle forms with built-in action logic.
+- Useful for simplifying form validation and submission workflows.
+
+---
+
+### Action Function Logic
+
+- Accepts previous state and new `formData`
+- Validates:
+  - Name should not be empty or exceed 5 characters
+  - Password should only contain letters and numbers
+- Returns:
+  - An `error` if validation fails
+  - A `message` if validation succeeds
+
+---
+
+### Output Behavior
+
+- Shows error message if validation fails
+- Shows success message if validation passes
+- Keeps previous input values filled after submission
+
+---

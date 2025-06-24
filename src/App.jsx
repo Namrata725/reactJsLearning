@@ -47,6 +47,7 @@ import FetchDataGetMethod from "./API/FetchDataGetMethod";
 import JsonApiIntegrationWithLoader from "./API/JsonApiIntegrationWithLoader";
 import MainAPI from "./API/MainAPI";
 import SimpleFormValidation from "./FormValidation/simpleFormValidation";
+import FormValidationUsingUseActionState from "./FormValidation/FormValidationUsingUseActionState";
 function App() {
   return (
     <div>
@@ -121,7 +122,8 @@ function App() {
       {/* <FetchDataGetMethod /> */}
       {/* <JsonApiIntegrationWithLoader /> */}
       {/* <MainAPI /> */}
-      <SimpleFormValidation />
+      {/* <SimpleFormValidation /> */}
+      <FormValidationUsingUseActionState />
     </div>
   );
 }
