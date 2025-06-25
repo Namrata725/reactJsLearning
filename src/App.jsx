@@ -49,6 +49,7 @@ import MainAPI from "./API/MainAPI";
 import SimpleFormValidation from "./FormValidation/simpleFormValidation";
 import FormValidationUsingUseActionState from "./FormValidation/FormValidationUsingUseActionState";
 import UseReducerDemo from "./FormValidation/UseReducerDemo";
+import LazyLoad from "./LazyLoad";
 function App() {
   return (
     <div>
@@ -125,7 +126,8 @@ function App() {
       {/* <MainAPI /> */}
       {/* <SimpleFormValidation /> */}
       {/* <FormValidationUsingUseActionState /> */}
-      <UseReducerDemo />
+      {/* <UseReducerDemo /> */}
+      <LazyLoad />
     </div>
   );
 }

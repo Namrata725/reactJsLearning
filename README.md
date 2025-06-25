@@ -4007,23 +4007,22 @@ Use a basic form with `name` and `password` fields:
 ```
 
 ## 2. Define Action Function
+
 Create a function to handle form submission and validation:
 
 ```jsx
-
 function handleLogin(prevData, formData) {
   let name = formData.get("name");
   let password = formData.get("password");
   // validation logic
 }
-
 ```
 
 ## 3. Apply Validation
+
 Add conditions to check if name and password meet criteria:
 
 ```jsx
-
 if (!name || name.length > 5) {
   return {
     error: "Name can't be empty or have more than 5 characters",
@@ -4039,18 +4038,82 @@ if (!name || name.length > 5) {
 } else {
   return { message: "Login successful", name, password };
 }
-
 ```
 
 ## 4.Display Error or Success Message
+
 Use conditional rendering to show validation messages:
 
 ```jsx
-
-{data?.message && <span style={{ color: "green" }}>{data.message}</span>}
-{data?.error && <span style={{ color: "red" }}>{data.error}</span>}
-
+{
+  data?.message && <span style={{ color: "green" }}>{data.message}</span>;
+}
+{
+  data?.error && <span style={{ color: "red" }}>{data.error}</span>;
+}
 ```
+
 ---
+
 ## demo file: FormValidation-> UseReducerDemo.jsx
+
 ---
+
+## Lazy Loading in React JS
+
+---
+
+### What is Lazy Loading?
+
+Lazy loading delays the loading of a component until it's needed. React offers built-in support using `React.lazy()` and `Suspense`.
+
+---
+
+### 1. Lazy import
+
+```jsx
+const User = lazy(() => import("./User"));
+```
+
+### 2. Suspense wrapper
+
+```jsx
+<Suspense fallback={<h2>Loading...</h2>}>
+  <User />
+</Suspense>
+```
+
+### 3. Conditional rendering on click
+
+```jsx
+{
+  load ? (
+    <Suspense fallback={<h2>Loading...</h2>}>
+      <User />
+    </Suspense>
+  ) : null;
+}
+
+<button onClick={() => setLoad(true)}>Load User</button>;
+```
+
+---
+
+## Performance Tip
+
+- Use DevTools → Network → Disable cache
+- Throttle to "Slow 3G"
+
+---
+
+## Summary
+
+| Feature        | Snippet                                   |
+| -------------- | ----------------------------------------- |
+| Lazy import    | `lazy(() => import(...))`                 |
+| Suspense usage | `<Suspense fallback={...}>...</Suspense>` |
+| On demand load | Conditional render + button click         |
+
+---
+
+## file : lazyLoad.jsx and LazyLoadUser.jsx
