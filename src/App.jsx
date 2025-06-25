@@ -42,7 +42,7 @@ import CustomHook from "./CustomHook";
 import MainComponent from "./ContextAPI/MainComponent";
 import RouteDemo from "./RouteDemo";
 import MainRouter from "./ReactRouter/MainRouter";
-import MainPageNotFound from "../PageNotFoundDemo/MainPageNotFound";
+import MainPageNotFound from "./PageNotFoundDemo/MainPageNotFound";
 import FetchDataGetMethod from "./API/FetchDataGetMethod";
 import JsonApiIntegrationWithLoader from "./API/JsonApiIntegrationWithLoader";
 import MainAPI from "./API/MainAPI";
@@ -117,7 +117,7 @@ function App() {
 
       {/* <MainRouter /> */}
 
-      {/* <MainPageNotFound /> */}
+      <MainPageNotFound />
 
       {/* <MainRouter /> */}
 
@@ -127,7 +127,7 @@ function App() {
       {/* <SimpleFormValidation /> */}
       {/* <FormValidationUsingUseActionState /> */}
       {/* <UseReducerDemo /> */}
-      <LazyLoad />
+      {/* <LazyLoad /> */}
     </div>
   );
 }
