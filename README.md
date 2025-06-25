@@ -4117,3 +4117,46 @@ const User = lazy(() => import("./User"));
 ---
 
 ## file : lazyLoad.jsx and LazyLoadUser.jsx
+
+---
+
+## use API in React 19
+
+---
+
+### What is the `use()` API?
+
+The `use()` API is a new experimental feature introduced in **React 19** that allows you to directly **read the result of a Promise** (like fetching data) **inside components** without using `useEffect` or `useState`.
+
+---
+
+### How Does `use()` Work?
+
+- You pass a **Promise** to `use(promise)`
+- React will automatically suspend rendering of the component until the Promise resolves
+- While it's loading, it shows a fallback UI (using `<Suspense>`)
+- Once resolved, the result is returned and available directly
+
+---
+
+### Basic Flow:
+
+```jsx
+const userPromise = fetchData();
+const data = use(userPromise); // use() unwraps the resolved value
+```
+
+---
+
+## Features of `use()` in React 19
+
+- Handles **Promise-based data** directly in components
+- Works with `<Suspense>` to manage loading states
+- Can integrate with **Context API**
+- Reduces need for `useEffect`, `useState` boilerplate
+- Improves performance by reducing unnecessary re-renders
+- Enables better **server components** and **async rendering**
+
+---
+
+## example code:API-> UseAPIDemo.jsx

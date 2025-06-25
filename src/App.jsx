@@ -50,6 +50,7 @@ import SimpleFormValidation from "./FormValidation/simpleFormValidation";
 import FormValidationUsingUseActionState from "./FormValidation/FormValidationUsingUseActionState";
 import UseReducerDemo from "./FormValidation/UseReducerDemo";
 import LazyLoad from "./LazyLoad";
+import UseAPIDemo from "./API/UseAPIDemo";
 function App() {
   return (
     <div>
@@ -117,7 +118,7 @@ function App() {
 
       {/* <MainRouter /> */}
 
-      <MainPageNotFound />
+      {/* <MainPageNotFound /> */}
 
       {/* <MainRouter /> */}
 
@@ -128,6 +129,7 @@ function App() {
       {/* <FormValidationUsingUseActionState /> */}
       {/* <UseReducerDemo /> */}
       {/* <LazyLoad /> */}
+      <UseAPIDemo />
     </div>
   );
 }
